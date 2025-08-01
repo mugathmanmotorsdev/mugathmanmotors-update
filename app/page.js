@@ -1,9 +1,9 @@
+import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail, MapPin, Phone } from "lucide-react";
-import Image from "next/image";
 
 const products = [
   {
@@ -112,15 +112,15 @@ export default function Home() {
             <div className="flex flex-col gap-5">
               <h2 className="text-3xl font-semibold mb-4">Contact us</h2>
               <div className="flex gap-3 items-center text-xl">
-                <MapPin size={25} />
+                <MapPin size={25} className="text-[#150150]" />
                 <p>Danladi Nasidi Housing Estate, Mariri Kumbotso LGA Kano state, Nigeria</p>
               </div>
               <div className="flex gap-3 items-center text-xl">
-                <Phone size={25} />
+                <Phone size={25} className="text-[#150150]" />
                 <p>+2348067957554, +2348033395299</p>
               </div>
               <div className="flex gap-3 items-center text-xl">
-                <Mail size={25} />
+                <Mail size={25} className="text-[#150150]" />
                 <p>mgaliusman1994@gmail.com</p>
               </div>
             </div>
@@ -148,6 +148,9 @@ export default function Home() {
             </form>
           </div>
         </section>
+
+        {/* Footer */}
+        <Footer />
     </div>
   );
 }

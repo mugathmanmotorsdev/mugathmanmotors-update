@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import Navigator from "@/components/Navigators";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,17 +27,11 @@ export default function RootLayout({ children }) {
       >
         {/* Header */}
         <header className="flex justify-between bg-white text-black p-4">
-          <div>
+          <div className="flex gap-4">
             <Image src="/logo.png" alt="logo" width={32} height={32} />
+            <h1 className="font-bold text-2xl">Mugathman Motors</h1>
           </div>
-          <nav>
-            <ul className="flex gap-4">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/inventory">Inventory</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-            </ul>
-          </nav>
+          <Navigator />
         </header>
         {children}
       </body>
