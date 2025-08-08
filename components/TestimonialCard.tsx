@@ -2,7 +2,10 @@ import { Star } from "lucide-react";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import Image from "next/image";
 
-export default function TestimonialCard({ image, name, position, testimonil, star }) {
+export default function TestimonialCard(
+    { image, name, position, testimonil, star }: 
+    { image: string, name: string, position: string, testimonil: string, star: number }
+) {
     return (
         <Card className="flex flex-col gap-4 rounded-3xl p-4 bg-white border-0 ">
             <CardHeader className="flex items-center gap-4">
@@ -14,7 +17,7 @@ export default function TestimonialCard({ image, name, position, testimonil, sta
                     <p className="text-sm">{position}</p>
                 </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="">
                 <div className="my-2">
                     <p>{testimonil}</p>
                 </div>
