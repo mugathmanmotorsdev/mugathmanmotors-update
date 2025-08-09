@@ -29,24 +29,24 @@ const products = [
 
 const testimonials = [
   {
-    image: "/testimonial.jpg",
-    name: "John Doe",
-    position: "CEO",
-    testimonil: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    image: "/ismailmb.jpg",
+    name: "Ismail MB",
+    position: "Web Consultant & Developer",
+    testimonil: "Working with Mugathman Motors on their digital presence has given me deep insight into their professionalism. Beyond their physical inventory, they genuinely care about customer satisfaction, transparency, and long-term business growth.",
     star: 5
   },
   {
-    image: "/testimonial.jpg",
-    name: "John Doe",
-    position: "CEO",
-    testimonil: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    image: "/advicer.jpg",
+    name: "Alhaji Musa Usman",
+    position: "Logistics Business Owner, Kaduna",
+    testimonil: "I’ve been buying trucks and parts from Mugathman for years. They are honest, reliable, and always have what I need in stock. Their team is trustworthy and well-organized — a rare quality in this market.",
     star: 5
   },
   {
-    image: "/testimonial.jpg",
-    name: "John Doe",
-    position: "CEO",
-    testimonil: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    image: "/product-2.jpg",
+    name: "Ibrahim Sani",
+    position: "Construction Fleet Manager, Kano",
+    testimonil: "Mugathman Motors has been a dependable partner in our equipment sourcing. The trucks and bulldozers we purchased were top-quality, and their support service is unmatched. We’ll continue to buy from them with confidence.",
     star: 5
   },
 ]
