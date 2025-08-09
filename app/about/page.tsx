@@ -131,11 +131,7 @@ export default function Page() {
                     <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
                         <h2 className="text-3xl font-bold my-5">Our Mission</h2>
                         <p className="text-lg">
-                            Mugathman motors offered a wide range of vehicles including
-                            <b> trucks , cars, farm tractors and quality spare parts </b>
-                            to meet all your logistics and transportation needs.
-                            mugathman motors has a team of experienced professionals who are dedicated to providing top-quality transportation solutions to meet your needs.
-                            Our commitment to quality and customer satisfaction sets us apart from the competition.
+                             Mugathman Motors and Logistics Limited aims in offering the best logistics solutions that suits the needs of each vertical market or industry, develop mutually rewarding relationships with employees, partners, suppliers and customers.
                         </p>
                     </div>
                 </section>
@@ -154,12 +150,7 @@ export default function Page() {
                     <div className="w-full md:w-1/2 flex flex-col justify-center text-lg">
                         <h2 className="text-3xl font-bold my-5">Our Vision</h2>
                         <p className="text-lg">
-                            Our vision is to become the leading provider of transportation solutions,
-                            delivering excellence in every aspect of our operations.
-                            We aspire to be a trusted partner for businesses and individuals seeking reliable and efficient transportation services.
-                            Our vision is to become the leading provider of transportation solutions,
-                            delivering excellence in every aspect of our operations.
-                            We aspire to be a trusted partner for businesses and individuals seeking reliable and efficient transportation services.
+                            We aspire to be a strong partner of the companies, helping them to obtain sustainable competitive advantages, through logistics solutions able to position their products in the market quickly, efficiently and safely.
                         </p>
                     </div>
                 </section>
@@ -178,9 +169,7 @@ export default function Page() {
                     <div className="w-full md:w-1/2 flex flex-col justify-center text-lg">
                         <h2 className="text-3xl font-bold my-5">Our Values</h2>
                         <p className="text-lg">
-                            Our values are rooted in integrity, excellence, and customer-centricity.
-                            We believe in fostering a culture of transparency, innovation, and collaboration,
-                            ensuring that our services meet the highest standards of quality and customer satisfaction.
+                            We value strong relationships with our team, customers, and partners. We grow through active learning, invest in personal development, and deliver on promises to earn trust. With passion and determination, we lead by example and turn every challenge into an opportunity.
                         </p>
                     </div>
                 </section>
