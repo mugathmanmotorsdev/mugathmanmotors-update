@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.mugathmanmotors.com
+
+# Sitemaps
+Sitemap: https://www.mugathmanmotors.com/sitemap.xml
