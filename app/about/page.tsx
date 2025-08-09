@@ -92,7 +92,7 @@ export default function Page() {
             {/* About Section */}
             <section className="text-center">
                 <h2 className="text-3xl font-bold">About Us</h2>
-                <p className="text-lg">Driven by Excellence, Buil on Trust</p>
+                <p className="text-lg">Driven by Excellence, Build on Trust</p>
                 <div className="container mx-auto px-5 my-10">
                     <Image
                         src="/about.jpg"
@@ -104,13 +104,9 @@ export default function Page() {
                 </div>
 
                 <div className="container mx-auto px-5 my-10">
-                    <h2 className="text-3xl font-bold my-5">Mugathman Motors Jounerney</h2>
+                    <h2 className="text-3xl font-bold my-5">Mugathman Motors Journey</h2>
                     <p className="text-lg">
-                        Mugathman motors offered a wide range of vehicles including
-                        <b> trucks , cars, farm tractors and quality spare parts </b>
-                        to meet all your logistics and transportation needs.
-                        mugathman motors has a team of experienced professionals who are dedicated to providing top-quality transportation solutions to meet your needs.
-                        Our commitment to quality and customer satisfaction sets us apart from the competition.
+                         Mugathman Motors and Logistics Ltd, founded by Alhaji Gali Muhammad Usman and registered in 2019 (RC: 1643911), is a proudly Nigerian company specializing in the sale of heavy-duty vehicles and equipment, including truck heads, trailers, tippers, and quality spare parts. With over 1,000 units sold, we are known for our strong after-sales support and reliable logistics solutions tailored to meet client needs. Driven by quality, integrity, and innovation, we are committed to excellence in every service we provide.
                     </p>
                 </div>
             </section>
@@ -218,13 +214,13 @@ export default function Page() {
                     </div>
                     <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
                         <h2 className="text-3xl font-bold my-5">Why Choose Mugathman Motors</h2>
-                        <p className="text-lg">
-                            Mugathman motors offered a wide range of vehicles including
-                            <b> trucks , cars, farm tractors and quality spare parts </b>
-                            to meet all your logistics and transportation needs.
-                            Our vision is to become the leading provider of transportation solutions,
-                            delivering excellence in every aspect of our operations.
-                        </p>
+                        <ul className="text-lg">
+                            <li>Trusted by hundred satisfied customers</li>
+                            <li>Fast, secure nationwide delivery</li>
+                            <li>Wide inventory across vehicles categories</li>
+                            <li>Reliable sourcing on-demand</li>
+                            <li>Excellent customer support</li>
+                        </ul>
                     </div>
                 </section>
 
@@ -242,9 +238,9 @@ export default function Page() {
                     <div className="w-full md:w-1/2 flex flex-col justify-center text-lg">
                         <h2 className="text-3xl font-bold my-5">License and Registration</h2>
                         <p className="text-lg">
-                            Our vision is to become the leading provider of transportation solutions,
-                            delivering excellence in every aspect of our operations.
-                            We aspire to be a trusted partner for businesses and individuals seeking reliable and efficient transportation services.
+                            <b>Business Name: </b> Mugathman Motors and Logistics Limited<br />
+                            <b>Registration Number: </b> RC: 1643911 <br />
+                            <b>Authorize By: </b> Corporate Affairs Commission (CAC), Nigeria
                         </p>
                     </div>
                 </section>

@@ -4,7 +4,7 @@ export default function ContactSection() {
     
     return (
         <section className="bg-[#F8F4FF] p-12">
-          <div className="flex flex-col md:flex-row gap-5 items-center">
+          <div className="flex flex-col md:flex-row gap-5 items-center justify-center">
             {/* Contact us section details */}
             <div className="flex flex-col gap-5">
               <h2 className="text-3xl font-semibold mb-4">Contact us</h2>

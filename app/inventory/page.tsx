@@ -5,71 +5,71 @@ const trucks = [
   {
     image: "/hero.png",
     heading: "Howo 6 X 4 Dump Truck",
-    description: "Powerful, reliable trucks build to handle every job with ease."
+    description: "Howo are so durable and powerful, ideal for heavy-duty transport."
   },
   {
     image: "/volvo.jpeg",
     heading: "Volvo FM - Truck",
-    description: "Heavy duty tractors and dozers tough farm and construction work."
+    description: "Volvo delivers reliable performance with advanced safety and exceptional comfort."
   },
   {
     image: "/daf-2.jpg",
     heading: "Daf XF 95",
-    description: "Genuine spare parts to keep your vehicles running smoothly at peak performance."
+    description: "DAF trucks combine strength and reliability, making them perfect for tough transport tasks."
   }
 ]
 
 const tractors = [
   {
     image: "/product-2.jpg",
-    heading: "Howo 6 X 4 Dump Truck",
-    description: "Powerful, reliable trucks build to handle every job with ease."
+    heading: "CAT 336 GC",
+    description: "CAT bulldozers are built for power, durability, and rugged performance on tough terrains."
   },
   {
     image: "/tractor.jpg",
-    heading: "Volvo FM - Truck",
-    description: "Heavy duty tractors and dozers tough farm and construction work."
+    heading: "New Holland Tractor",
+    description: "New Holland tractors combine innovation and reliability for efficient farming and land work."
   },
   {
     image: "/bulldozer.jpg",
-    heading: "Daf XF 95",
-    description: "Genuine spare parts to keep your vehicles running smoothly at peak performance."
+    heading: "WALO Excavator",
+    description: "WALO bulldozers deliver strength and precision for large-scale construction and earthmoving."
   }
 ]
 
 const cars = [
   {
     image: "/car-1.jpg",
-    heading: "Howo 6 X 4 Dump Truck",
-    description: "Powerful, reliable trucks build to handle every job with ease."
+    heading: "Honda Civic",
+    description: "Honda offers fuel efficiency, comfort, and everyday reliability."
   },
   {
     image: "/car-2.jpg",
-    heading: "Volvo FM - Truck",
-    description: "Heavy duty tractors and dozers tough farm and construction work."
+    heading: "Mercedes Benz",
+    description: "Mercedes Benz blends luxury, performance, and timeless elegance."
   },
   {
     image: "/car-3.jpg",
-    heading: "Daf XF 95",
-    description: "Genuine spare parts to keep your vehicles running smoothly at peak performance."
+    heading: "BMW M4",
+    description: "BMW delivers sporty power with premium design and handling."
   }
 ]
 
 const spareParts = [
   {
     image: "/sparepart-1.jpg",
-    heading: "Howo 6 X 4 Dump Truck",
-    description: "Powerful, reliable trucks build to handle every job with ease."
+    heading: "Trucks Rim",
+    description: "Trucks Rim provides sturdy support and stability for heavy-duty truck tires."
   },
   {
     image: "/product-4.jpg",
-    heading: "Volvo FM - Truck",
-    description: "Heavy duty tractors and dozers tough farm and construction work."
+    heading: "Automobile Wheel",
+    description: "Automobile Wheel offers durable and reliable performance for everyday driving."
   },
   {
     image: "/sparepart-2.jpg",
-    heading: "Daf XF 95",
-    description: "Genuine spare parts to keep your vehicles running smoothly at peak performance."
+    heading: "  Tires & Rims",
+    description: "Tires & Rims provide durable and reliable performance for everyday driving."
   }
 ]
 
