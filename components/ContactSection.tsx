@@ -32,7 +32,7 @@ export default function ContactSection() {
                 target="_blank"
                 className="flex gap-2 items-center">
                   <MessageCircle size={25} className="text-white" />
-                  <span>Let's Chat on WhatsApp</span>
+                  <span>Let&lsquo;s Chat on WhatsApp</span>
                 </Link>
               </Button>
             </div>
