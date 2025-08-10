@@ -49,12 +49,12 @@ const cars = [
     description: "Honda offers fuel efficiency, comfort, and everyday reliability."
   },
   {
-    image: "/car-2.jpg",
+    image: "/car-3.jpg",
     heading: "Mercedes Benz",
     description: "Mercedes Benz blends luxury, performance, and timeless elegance."
   },
   {
-    image: "/car-3.jpg",
+    image: "/car-2.jpg",
     heading: "BMW M4",
     description: "BMW delivers sporty power with premium design and handling."
   }
