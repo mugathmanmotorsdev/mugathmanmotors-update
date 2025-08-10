@@ -1,6 +1,11 @@
 import Footer from "@/components/Footer"
 import ProductCard from "@/components/ProductCard"
 
+export const metadata = {
+  title: "Inventory",
+  description: "Browse our inventory of heavy-duty trucks, tractors, and farm equipment."
+}
+
 const trucks = [
   {
     image: "/hero.png",

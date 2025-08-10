@@ -5,25 +5,19 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+    title: "About Us",
+    description: "Mugathman motors offered a wide range of vehicles including trucks, cars, farm tractors and quality spare parts to meet all your logistics and transportation needs.",
+}
 const YoutubeEmbed = dynamic(() => import("@/components/YoutubeEmbed"))
 
 const videos = [
     {
-        videoId: "y3Ww26BLSKU",
+        videoId: "wLvfHQU1XfI",
         title: "Mugathman Motors journey",
-        url: "https://www.youtube.com/watch?v=y3Ww26BLSKU",
+        url: "https://www.youtube.com/watch?v=wLvfHQU1XfI",
     },
-    {
-        videoId: "D-f0yVjYBRQ",
-        title: "About Us - Mugathman Motors",
-        url: "https://www.youtube.com/watch?v=D-f0yVjYBRQ",
-    },
-    {
-        videoId: "5z0QVa6HNAY",
-        title: "Our best products - derived from our commitment to excellence",
-        url: "https://www.youtube.com/watch?v=5z0QVa6HNAY",
-    },
-]
+];
 
 const teamHeads = [
     {

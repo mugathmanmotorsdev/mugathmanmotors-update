@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: "Mugathman Motors - Home",
     description: "Mugathman motors offered a wide range of vehicles including trucks, cars, farm tractors and quality spare parts to meet all your logistics and transportation needs.",
-    url: "https://mugathman-motors.vercel.app/",
+    url: "https://mugathmanmotors.com/",
     siteName: "Mugathman Motors",
     images: [
       {

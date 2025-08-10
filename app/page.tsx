@@ -6,6 +6,26 @@ import ContactSection from "@/components/ContactSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Mugathman Motors",
+  description: "Mugathman motors offered a wide range of vehicles including trucks, cars, farm tractors and quality spare parts to meet all your logistics and transportation needs.",
+  openGraph: {
+    title: "Mugathman Motors",
+    description: "Mugathman motors offered a wide range of vehicles including trucks, cars, farm tractors and quality spare parts to meet all your logistics and transportation needs.",
+    url: "https://mugathmanmotors.com/",
+    siteName: "Mugathman Motors",
+    images: [
+      {
+        url: "/hero.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  }
+}
+
 const products = [
   {
     image: "/product-1.png",
@@ -39,16 +59,16 @@ const testimonials = [
   },
   {
     image: "/advicer.jpg",
-    name: "Alhaji Musa Usman",
-    position: "Logistics Business Owner, Kaduna",
-    testimonil: "I’ve been buying trucks and parts from Mugathman for years. They are honest, reliable, and always have what I need in stock. Their team is trustworthy and well-organized — a rare quality in this market.",
+    name: "Abba Yahaya Warawa",
+    position: "Advicer, Special duties",
+    testimonil: "As an advisor to Mugathman Motors, I have witnessed firsthand their commitment to integrity, customer satisfaction, and community development. Their leadership is visionary, and their staff is dedicated to delivering exceptional service. I am proud to be associated with this organization.",
     star: 5
   },
   {
     image: "/product-2.jpg",
-    name: "Ibrahim Sani",
-    position: "Construction Fleet Manager, Kano",
-    testimonil: "Mugathman Motors has been a dependable partner in our equipment sourcing. The trucks and bulldozers we purchased were top-quality, and their support service is unmatched. We’ll continue to buy from them with confidence.",
+    name: "Surajo Sani",
+    position: "General Manager",
+    testimonil: "I have been working with Mugathman Motors for over a decade, and I can attest to their commitment to excellence in every aspect of their business. From their quality products to their exceptional customer service, they are a true partner in success. I highly recommend Mugathman Motors to anyone looking for reliable and trustworthy logistics solutions.",
     star: 5
   },
 ]

@@ -2,6 +2,11 @@ import InquiryForm from "@/components/InquryForm";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+    title: "Contact Us",
+    description: "Get in touch with us and let us know how we can help you. We are here to assist you with any questions or concerns you may have.",
+}
+
 export default function Page() {
     
     return (
