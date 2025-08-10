@@ -26,6 +26,8 @@ export default function InquiryForm() {
         formData.append("name", data.name);
         formData.append("email", data.email);
         formData.append("message", data.message);
+        
+        //send data to server
         const res = await Inquiry(formData);
 
         //set status for ui changes

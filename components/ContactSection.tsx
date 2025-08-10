@@ -28,7 +28,7 @@ export default function ContactSection() {
               size="lg" 
               asChild>
                 <Link 
-                href="https://wa.me/2348067957554" 
+                href="https://wa.me/2348033395299" 
                 target="_blank"
                 className="flex gap-2 items-center">
                   <MessageCircle size={25} className="text-white" />

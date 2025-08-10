@@ -13,8 +13,8 @@ export async function Inquiry(formData: FormData) {
     //send email
     const resend = new Resend(process.env.RESEND_API_KEY);
     const inquiry = await resend.emails.send({
-        from: "Mugathman <inquiry@mugathmanmotors.com>",
-        to: "ismailmb2024@gmail.com",
+        from: "Mugathman <enquiry@mugathmanmotors.com>",
+        to: "info@mugathmanmotors.com",
         subject: "Inquiry from " + name,
         html: InquiryEmailTemplate(name, email, message),
     });
