@@ -3,6 +3,8 @@ import ProductCard from "@/components/ProductCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import SubscribeToEmailList from "../components/SubscribeToEmailList";
 import ContactSection from "@/components/ContactSection";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const products = [
   {
@@ -62,8 +64,20 @@ export default function Home() {
             Explore our top-quality vehicles and nationwide logistics services.
           </p>
           <div className="flex gap-5">
-            <button className="mt-4 px-4 py-2 bg-[#150150] text-white rounded-full">Make an enquiry</button>
-            <button className="mt-4 px-4 py-2 bg-white text-[#150150]  rounded-full">Contact Us</button>
+            <Button 
+            variant="default" 
+            size="default" 
+            className="mt-4 px-4 py-2 bg-[#150150] hover:bg-[#0f0150f6] text-white rounded-full"
+            asChild>
+              <Link href="/contact#enquiry-form">Make an enquiry</Link>
+            </Button>
+            <Button
+            variant="default" 
+            size="default"
+            className="mt-4 px-4 py-2 bg-white hover:bg-white text-[#150150] rounded-full"
+            asChild>
+              <Link href="/contact#contact-section">Contact Us</Link>
+            </Button>
           </div>
         </div>
       </section>

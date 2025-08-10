@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function ProductCard({ image, heading, description }) {
     return (
@@ -8,6 +10,12 @@ export default function ProductCard({ image, heading, description }) {
             </div>
             <h1 className="text-3xl font-bold">{heading}</h1>
             <p>{description}</p>
+            <Button variant="default" 
+            size="default" 
+            className="w-32 bg-[#150150] hover:bg-[#0f0150f6] rounded-full"
+            asChild>
+                <Link href="/contact#enquiry-form">Make an enquiry</Link>
+            </Button>
         </div>
     );
 }

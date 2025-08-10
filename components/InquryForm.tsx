@@ -37,7 +37,7 @@ export default function InquiryForm() {
     }
     
     return (
-        <section className="py-12 px-5">
+        <section id="enquiry-form" className="py-12 px-5">
             <Toaster richColors position="top-center"/>
             <div className="my-5">
                 <h2 className="font-bold text-2xl my-5">Get In Touch</h2>
@@ -75,7 +75,7 @@ export default function InquiryForm() {
                 <Button 
                 variant="default" 
                 size="default" 
-                className="bg-[#150150] rounded-xl md:w-52">Submit</Button>
+                className="bg-[#150150] hover:bg-[#0f0150f6]rounded-xl md:w-52">Submit</Button>
             </form>
         </section>
     )

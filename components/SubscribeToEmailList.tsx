@@ -48,7 +48,10 @@ export default function SubscribeToEmailList() {
                 {errors.email && <p className="text-red-500 mx-2">{errors.email.message}</p>}
               </div>
               
-              <Button variant="default" size="default" className="bg-[#150150] rounded-full">Subscribe</Button>
+              <Button 
+              variant="default" 
+              size="default" 
+              className="bg-[#150150] hover:bg-[#0f0150f6] rounded-full">Subscribe</Button>
             </form>
             
           </div>

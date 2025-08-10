@@ -1,9 +1,11 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function ContactSection() {
     
     return (
-        <section className="bg-[#F8F4FF] p-12">
+        <section id="contact-section" className="bg-[#F8F4FF] p-12">
           <div className="flex flex-col md:flex-row gap-5 items-center justify-center">
             {/* Contact us section details */}
             <div className="flex flex-col gap-5">
@@ -18,8 +20,21 @@ export default function ContactSection() {
               </div>
               <div className="flex gap-3 items-center text-xl">
                 <Mail size={25} className="text-[#150150]" />
-                <p>mgaliusman1994@gmail.com</p>
+                <p>info@mugathmanmotors.com</p>
               </div>
+              <Button 
+              className="w-52 md:w-64 bg-green-600 hover:bg-green-700 text-white rounded-full" 
+              variant="default" 
+              size="lg" 
+              asChild>
+                <Link 
+                href="https://wa.me/2348067957554" 
+                target="_blank"
+                className="flex gap-2 items-center">
+                  <MessageCircle size={25} className="text-white" />
+                  <span>Let's Chat on WhatsApp</span>
+                </Link>
+              </Button>
             </div>
 
             <div className="rounded-xl overflow-hidden">
