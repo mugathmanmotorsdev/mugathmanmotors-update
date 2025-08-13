@@ -16,7 +16,7 @@ export default function ContactSection() {
               </div>
               <div className="flex gap-3 items-center text-xl">
                 <Phone size={25} className="text-[#150150]" />
-                <p>+2348067957554, +2348033395299</p>
+                <p>+2348067957545, +2348033395299</p>
               </div>
               <div className="flex gap-3 items-center text-xl">
                 <Mail size={25} className="text-[#150150]" />
