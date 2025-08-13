@@ -1,6 +1,6 @@
 # *
 User-agent: *
-Allow: /
+Disallow:  # Ensure no pages are blocked by leaving this empty.
 
 # Host
 Host: https://www.mugathmanmotors.com
