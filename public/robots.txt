@@ -1,9 +1,2 @@
 # *
 User-agent: *
-Disallow:  # Ensure no pages are blocked by leaving this empty.
-
-# Host
-Host: https://www.mugathmanmotors.com
-
-# Sitemaps
-Sitemap: https://www.mugathmanmotors.com/sitemap.xml

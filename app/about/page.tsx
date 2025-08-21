@@ -108,7 +108,7 @@ export default function Page() {
             {/* Mission & Vision Section */}
             <section className="bg-[#eff4fd] py-12">
                 {/* Mission (odd, normal order) */}
-                <section className="flex flex-col md:flex-row items-center gap-5 md:gap-10 mx-auto px-5">
+                <section className="container flex flex-col md:flex-row items-center gap-5 md:gap-10 mx-auto px-5">
                     <div className="w-full md:w-1/2">
                         <Image
                             src="/hero.png"
@@ -196,7 +196,7 @@ export default function Page() {
             {/* Highlight section */}
             <section className="bg-[#F8F4FF] py-12">
                 {/* why choose us */}
-                <section className="flex flex-col md:flex-row items-center gap-5 md:gap-10 mx-auto px-5">
+                <section className="container flex flex-col md:flex-row items-center gap-5 md:gap-10 mx-auto px-5">
                     <div className="w-full md:w-1/2">
                         <Image
                             src="/why-choose-us.jpg"

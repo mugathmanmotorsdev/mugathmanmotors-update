@@ -39,7 +39,7 @@ export default function InquiryForm() {
     }
     
     return (
-        <section id="enquiry-form" className="py-12 px-5">
+        <section id="enquiry-form" className="container mx-auto py-12">
             <Toaster richColors position="top-center"/>
             <div className="my-5">
                 <h2 className="font-bold text-2xl my-5">Get In Touch</h2>
