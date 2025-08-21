@@ -77,7 +77,7 @@ export default function InquiryForm() {
                 <Button 
                 variant="default" 
                 size="default" 
-                className="bg-[#150150] hover:bg-[#0f0150f6]rounded-xl md:w-52">Submit</Button>
+                className="bg-[#150150] hover:bg-[#0f0150f6] rounded-full md:w-52">Submit</Button>
             </form>
         </section>
     )
