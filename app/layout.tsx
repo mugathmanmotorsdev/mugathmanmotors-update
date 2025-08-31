@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Navigator from "@/components/Navigators";
+import { icons } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,9 @@ export const metadata = {
     ],
     locale: "en_US",
     type: "website",
+    icons: {
+      icon: "/favicon.ico"
+    }
   }
 };
 
