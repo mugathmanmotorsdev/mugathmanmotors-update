@@ -52,7 +52,7 @@ export default function BrandFilter({ categories }: { categories: string[] }) {
                                 { categories.map((category, index) => {
                                     const checked = selectedCategories.includes(category)
                                     return ( 
-                                        <div className=" flex flex-col gap-4">
+                                        <div className=" flex flex-col gap-4" key={index}>
                                             <div key={index} className="flex items-center gap-3">
                                                 <Checkbox
                                                     id={category.toLowerCase()}
@@ -82,7 +82,7 @@ export default function BrandFilter({ categories }: { categories: string[] }) {
                     { categories.map((category, index) => {
                         const checked = selectedCategories.includes(category)
                         return ( 
-                            <div className=" flex flex-col gap-4">
+                            <div className=" flex flex-col gap-4" key={index}>
                                 <div key={index} className="flex items-center gap-3">
                                     <Checkbox
                                         id={category.toLowerCase()}
