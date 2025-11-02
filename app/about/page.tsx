@@ -87,32 +87,22 @@ export default function Page() {
     return (
         <div className="bg-white text-black">
             {/* About Section */}
-            <section className="text-center">
-                <div className="my-10">
-                    <h2 className="text-7xl font-bold my-5">About Us</h2>
-                    <p className="text-2xl">Driven by Excellence in Heavy Machinery, <br /> Energy and Logistics Built on Trust</p>
+            <section>
+                <div className="text-center my-10 w-[95vw] mx-auto rounded-2xl bg-[url('/hero-top-2-v2.jpg')] bg-cover bg-center min-h-[80vh] text-white flex flex-col justify-center">
+                    <h2 className="text-5xl md:text-7xl font-bold my-5">About Us</h2>
+                    <p className="md:text-2xl">Driven by Excellence in Heavy Machinery, <br /> Energy and Logistics Built on Trust</p>
                     <div className="flex gap-2 justify-center w-24 h-1 mx-auto my-5 rounded-full">
-                        <Button className={"bg-[#150150] hover:bg-[#0f0150f6] text-white rounded-full px-4 py-2"} asChild>
+                        <Button className={"bg-[#150150] hover:bg-[#0f0150f6] text-white rounded-full md:px-10 md:py-5"} asChild>
                             <Link href="/contact#enquiry-form">Make an Enquiry</Link>
                         </Button>
-                        <Button className={"bg-green-600 hover:bg-green-700 text-white rounded-full px-4 py-2 ml-5"} asChild>
+                        <Button className={"bg-green-600 hover:bg-green-700 text-white rounded-full md:px-10 md:py-5 ml-5"} asChild>
                             <Link href="https://wa.me/2348033395299" target="_blank">Chat on WhatsApp</Link>
                         </Button>
                     </div>
                 </div>
-                <div>
-                    <div className="container mx-auto h-[70vh] px-5 my-10 relative rounded-2xl overflow-hidden">
-                        <Image
-                            src="/about.jpg"
-                            className="object-cover rounded-2xl"
-                            alt="bulldozer"
-                            fill
-                        />
-                    </div>
-                </div>
                 
 
-                <div className="container mx-auto px-5 my-10">
+                <div className="container mx-auto md:text-center px-5 my-10">
                     <h2 className="text-3xl font-bold my-5">Mugathman Motors Journey</h2>
                     <p className="text-lg">
                          Mugathman Motors and Logistics Ltd, founded by Alhaji Gali Muhammad Usman and officially registered in 2019 (RC: 1643911), is a proudly Nigerian company leading the market in heavy-duty vehicle and equipment sales. We specialize in truck heads, trailers, tippers, tractors, and genuine spare parts, offering durable solutions for transportation, agriculture, and construction sectors across Nigeria.

@@ -100,8 +100,8 @@ export default function Home() {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-      <section className="h-[80vh] flex flex-col justify-center bg-[url('/hero-top-2.jpg')] bg-cover bg-right text-white">
-        <div className="h-full md:w-2/5 p-8 flex flex-col justify-center backdrop-blur-sm bg-white/20 border border-white/30 rounded-2xl shadow-lg my-20 mx-10">
+      <section className="h-[80vh] flex flex-col justify-center bg-[url('/hero-top-v2.jpg')] bg-cover bg-center text-white">
+        <div className="h-full md:w-2/5 p-5 flex flex-col justify-center my-20 md:mx-10">
           <h1 className="text-5xl md:text-6xl font-bold">Powering Construction, Farming, and Logistics Across Nigeria</h1>
           <p className="mt-4 text-lg md:text-xl">
             From reliable <b>trucks and tractors to trailers, dozers,<br /> and spare parts</b>, Mugathman Motors delivers <b>trusted vehicles<br /> and logistics solutions</b> nationwide.
@@ -135,7 +135,7 @@ export default function Home() {
         </div>
         <div className=" w-full md:w-1/3 mx-auto px-4">
           <Image
-            src="/product-8.jpeg"
+            src="/hero-top-2.jpg"
             alt="About Mugathman Motors - Truck Dealer & Spare Parts in Kano, Nigeria"
             className="rounded-lg"
             width={500}
