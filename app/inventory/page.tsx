@@ -1,148 +1,57 @@
 import Footer from "@/components/Footer"
-import ProductCard from "@/components/ProductCard"
+import InventoryCatalog from "@/components/InventoryCatalog"
+import { Button } from "@/components/ui/button"
+import { allProductsQuery, categoriesQueries } from "@/lib/queries"
+import { client } from "@/lib/sanity"
+import { category } from "@/lib/types/category"
+import { product } from "@/lib/types/product"
 
 export const metadata = {
-  title: "Inventory",
-  description: "Browse our inventory of heavy-duty trucks, tractors, and farm equipment."
-}
+  title: "Inventory | Mugathman Motors - Trucks, Tractors & Spare Parts in Nigeria",
+  description:
+    "Explore Mugathman Motors’ inventory of heavy-duty trucks, tractors, trailers, and farm equipment. Trusted dealer for quality vehicles, spare parts, and logistics solutions across Kano and Nigeria.",
+};
 
-const trucks = [
-  {
-    image: "/hero.png",
-    heading: "Howo 6 X 4 Dump Truck",
-    description: "Howo are so durable and powerful, ideal for heavy-duty transport."
-  },
-  {
-    image: "/volvo.jpeg",
-    heading: "Volvo FM - Truck",
-    description: "Volvo delivers reliable performance with advanced safety and exceptional comfort."
-  },
-  {
-    image: "/daf-2.jpg",
-    heading: "Daf XF 95",
-    description: "DAF trucks combine strength and reliability, making them perfect for tough transport tasks."
-  }
-]
+export default async function Page(
+  {searchParams}:
+  {searchParams: Promise<{q: string, category: string, page: string}>}
+) {
 
-const tractors = [
-  {
-    image: "/product-2.jpg",
-    heading: "CAT 336 GC",
-    description: "CAT bulldozers are built for power, durability, and rugged performance on tough terrains."
-  },
-  {
-    image: "/tractor.jpg",
-    heading: "New Holland Tractor",
-    description: "New Holland tractors combine innovation and reliability for efficient farming and land work."
-  },
-  {
-    image: "/bulldozer.jpg",
-    heading: "WALO Excavator",
-    description: "WALO bulldozers deliver strength and precision for large-scale construction and earthmoving."
-  }
-]
+  const { category, page, q } = (await searchParams)
+  const pageNumber = parseInt(page || "1")
 
-const cars = [
-  {
-    image: "/car-1.jpg",
-    heading: "Honda Civic",
-    description: "Honda offers fuel efficiency, comfort, and everyday reliability."
-  },
-  {
-    image: "/car-3.jpg",
-    heading: "Mercedes Benz",
-    description: "Mercedes Benz blends luxury, performance, and timeless elegance."
-  },
-  {
-    image: "/car-2.jpg",
-    heading: "BMW M4",
-    description: "BMW delivers sporty power with premium design and handling."
-  }
-]
+  //Fetch products from sanity
+  const allProducts = await client.fetch(allProductsQuery) as product[];
+  const categories = await client.fetch(categoriesQueries) as category[]
+  console.log("Categories: ", categories)
 
-const spareParts = [
-  {
-    image: "/sparepart-1.jpg",
-    heading: "Trucks Rim",
-    description: "Trucks Rim provides sturdy support and stability for heavy-duty truck tires."
-  },
-  {
-    image: "/product-4.jpg",
-    heading: "Automobile Wheel",
-    description: "Automobile Wheel offers durable and reliable performance for everyday driving."
-  },
-  {
-    image: "/sparepart-2.jpg",
-    heading: "  Tires & Rims",
-    description: "Tires & Rims provide durable and reliable performance for everyday driving."
-  }
-]
-
-export default function Page() {
-    
-    return (
-        <div className="bg-white text-black">
-            {/* Hero section */}
-            <section className="h-[80vh] flex flex-col justify-center bg-[url('/hero-2.png')] bg-cover bg-center text-white">
-                <div className="p-8" >
-                    <h1 className="text-5xl md:text-6xl font-bold">Explore Our Inventory</h1>
-                    <p className="mt-4 text-lg">
-                        Browse quality vehicles, equipment, and spare parts for your logistics need
-                    </p>
-
-                </div>
-            </section>
-
-            {/* Trucks section */}
-            <section className="bg-[#f8f4ff] py-12">
-              <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-semibold mb-4">Trucks</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {trucks.map((item, index) => (
-                    <ProductCard key={index} {...item} />
-                  ))}
-                </div>
+  return (
+      <div className="bg-white text-black">
+          {/* Hero section */}
+          <section className="h-[80vh] flex flex-col justify-center items-center bg-[url('/inventory-hero-3.jpg')] bg-cover bg-left text-white">
+              <div className="text-center p-8 w-full" >
+                  <h1 className="text-5xl md:text-6xl font-bold">Explore Our Inventory</h1>
+                  <p className="md:w-3/5 mx-auto mt-4 text-lg">
+                    Discover a wide selection of trucks, tractors, cars, and genuine spare parts built for performance and reliability. Whether for business or personal logistics, Mugathman Motors provides trusted vehicles and equipment to keep you moving efficiently across Nigeria.
+                  </p>
+                  <div className="flex gap-5 justify-center mt-5">
+                    <Button 
+                    className="text-[#150150] bg-white rounded-full hover:bg-transparent hover:text-white hover:border-2 hover:border-white" 
+                    >View Inventory</Button>
+                  </div>
               </div>
-            </section>
+          </section>
 
-            {/* Tractors Section */}
-            <section className="bg-[#f8f4ff] py-12">
-              <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-semibold mb-4">Tructors and Bulldozers</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {tractors.map((item, index) => (
-                    <ProductCard key={index} {...item} />
-                  ))}
-                </div>
-              </div>
-            </section>
+          <InventoryCatalog 
+          allProducts={allProducts}
+          pageNumber={pageNumber}
+          query={q}
+          category={category}
+          categories={categories.map((c: category) => c.title)}
+          />
 
-            {/* Cars Section */}
-            <section className="bg-[#f8f4ff] py-12">
-              <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-semibold mb-4">Cars</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {cars.map((item, index) => (
-                    <ProductCard key={index} {...item} />
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Spare parts Section */}
-            <section className="bg-[#f8f4ff] py-12">
-              <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-semibold mb-4">Spare Parts</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {spareParts.map((item, index) => (
-                    <ProductCard key={index} {...item} />
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Footer */}
-            <Footer />
-        </div>
-    )
+          {/* Footer */}
+          <Footer />
+      </div>
+  )
 }

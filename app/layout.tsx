@@ -3,6 +3,7 @@ import "./globals.css";
 import Image from "next/image";
 import Navigator from "@/components/Navigators";
 import { icons } from "lucide-react";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +45,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Header */}
-        <header className="flex justify-between bg-white text-black p-4">
+        <header className="flex justify-between bg-white text-black p-4 container mx-auto items-center">
           <div className="flex gap-4">
             <Image src="/logo.png" alt="logo" width={32} height={32} />
             <h1 className="font-bold text-lg md:text-2xl">Mugathman Motors</h1>
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
           <Navigator responsive={true} />
         </header>
         {children}
+        <GoogleAnalytics />
       </body>
     </html>
   );

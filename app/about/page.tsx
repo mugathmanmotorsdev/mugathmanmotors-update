@@ -1,14 +1,17 @@
 import Footer from "@/components/Footer";
 import Profile from "@/components/Profile";
+import { Button } from "@/components/ui/button";
 import VideoCard from "@/components/VideoCard";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-    title: "About Us",
-    description: "Mugathman motors offered a wide range of vehicles including trucks, cars, farm tractors and quality spare parts to meet all your logistics and transportation needs.",
-}
+  title: "About Mugathman Motors | Heavy-Duty Vehicle & Equipment Dealer in Nigeria",
+  description:
+    "Learn about Mugathman Motors — a trusted Nigerian dealer in trucks, tractors, trailers, and quality spare parts. We deliver reliable vehicles, machinery, and logistics solutions for construction, farming, and transport industries across Kano and Nigeria.",
+};
+
 const YoutubeEmbed = dynamic(() => import("@/components/YoutubeEmbed"))
 
 const videos = [
@@ -85,22 +88,38 @@ export default function Page() {
         <div className="bg-white text-black">
             {/* About Section */}
             <section className="text-center">
-                <h2 className="text-3xl font-bold">About Us</h2>
-                <p className="text-lg">Driven by Excellence, Build on Trust</p>
-                <div className="container mx-auto px-5 my-10">
-                    <Image
-                        src="/about.jpg"
-                        className="rounded-4xl mx-auto"
-                        alt="bulldozer"
-                        width={1000}
-                        height={1000}
-                    />
+                <div className="my-10">
+                    <h2 className="text-7xl font-bold my-5">About Us</h2>
+                    <p className="text-2xl">Driven by Excellence in Heavy Machinery, <br /> Energy and Logistics Built on Trust</p>
+                    <div className="flex gap-2 justify-center w-24 h-1 mx-auto my-5 rounded-full">
+                        <Button className={"bg-[#150150] hover:bg-[#0f0150f6] text-white rounded-full px-4 py-2"} asChild>
+                            <Link href="/contact#enquiry-form">Make an Enquiry</Link>
+                        </Button>
+                        <Button className={"bg-green-600 hover:bg-green-700 text-white rounded-full px-4 py-2 ml-5"} asChild>
+                            <Link href="https://wa.me/2348033395299" target="_blank">Chat on WhatsApp</Link>
+                        </Button>
+                    </div>
                 </div>
+                <div>
+                    <div className="container mx-auto h-[70vh] px-5 my-10 relative rounded-2xl overflow-hidden">
+                        <Image
+                            src="/about.jpg"
+                            className="object-cover rounded-2xl"
+                            alt="bulldozer"
+                            fill
+                        />
+                    </div>
+                </div>
+                
 
                 <div className="container mx-auto px-5 my-10">
                     <h2 className="text-3xl font-bold my-5">Mugathman Motors Journey</h2>
                     <p className="text-lg">
-                         Mugathman Motors and Logistics Ltd, founded by Alhaji Gali Muhammad Usman and registered in 2019 (RC: 1643911), is a proudly Nigerian company specializing in the sale of heavy-duty vehicles and equipment, including truck heads, trailers, tippers, and quality spare parts. With over 1,000 units sold, we are known for our strong after-sales support and reliable logistics solutions tailored to meet client needs. Driven by quality, integrity, and innovation, we are committed to excellence in every service we provide.
+                         Mugathman Motors and Logistics Ltd, founded by Alhaji Gali Muhammad Usman and officially registered in 2019 (RC: 1643911), is a proudly Nigerian company leading the market in heavy-duty vehicle and equipment sales. We specialize in truck heads, trailers, tippers, tractors, and genuine spare parts, offering durable solutions for transportation, agriculture, and construction sectors across Nigeria.
+
+                        With over 1,000 units sold nationwide, Mugathman Motors has earned a reputation for reliability, integrity, and exceptional after-sales service. Our dedicated logistics support ensures clients receive timely and efficient delivery for every order — from individual buyers to large-scale organizations.
+
+                        Driven by quality, innovation, and customer satisfaction, Mugathman Motors continues to power Nigeria’s mobility and logistics industry with trusted vehicles and energy solutions built for lasting performance.
                     </p>
                 </div>
             </section>
@@ -183,7 +202,7 @@ export default function Page() {
                 </section>
                 
                 {/* managements team section */}
-                <section className="text-center">
+                <section className="text-center max-w-7xl mx-auto">
                     <h2 className="text-3xl font-bold my-5">Management Team</h2>
                     <section className="flex flex-col md:flex-row flex-wrap justify-center gap-5 md:gap-16 mx-auto px-10 mt-10">
                         {teamMembers.map((member, index) => (

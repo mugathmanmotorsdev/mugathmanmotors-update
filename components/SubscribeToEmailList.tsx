@@ -30,7 +30,7 @@ export default function SubscribeToEmailList() {
       toast.success("You have successfully subscribed to our email list.");
     }
     return(
-        <section className="py-12">
+        <section className="py-12 container mx-auto">
           <Toaster richColors position="top-center" />
           <div className="container mx-auto px-4">
             <h1 className="text-3xl font-semibold mb-10">Stay Updated on New Arrivals and Special Offers</h1> 

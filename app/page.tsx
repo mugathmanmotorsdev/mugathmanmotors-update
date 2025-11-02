@@ -5,13 +5,15 @@ import SubscribeToEmailList from "../components/SubscribeToEmailList";
 import ContactSection from "@/components/ContactSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+import Map from "@/components/Map";
 
 export const metadata = {
-  title: "Mugathman Motors",
-  description: "Mugathman motors offered a wide range of vehicles including trucks, cars, farm tractors and quality spare parts to meet all your logistics and transportation needs.",
+  title: "Mugathman Motors – Truck Dealer & Spare Parts in Kano, Nigeria",
+  description: "Mugathman Motors is a trusted truck dealer and spare parts supplier in Kano, Nigeria. We sell quality trucks, trailers, cars, farm tractors, and genuine parts to power your logistics and transport business.",
   openGraph: {
-    title: "Mugathman Motors",
-    description: "Mugathman motors offered a wide range of vehicles including trucks, cars, farm tractors and quality spare parts to meet all your logistics and transportation needs.",
+    title: "Mugathman Motors – Truck Dealer & Spare Parts in Kano, Nigeria",
+    description: "Mugathman Motors is a trusted truck dealer and spare parts supplier in Kano, Nigeria. We sell quality trucks, trailers, cars, farm tractors, and genuine parts to power your logistics and transport business.",
     url: "https://mugathmanmotors.com/",
     siteName: "Mugathman Motors",
     images: [
@@ -28,26 +30,47 @@ export const metadata = {
 
 const products = [
   {
-    image: "/product-1.png",
+    image: "/product-6.jpeg",
+    alt: "Heavy-duty truck for sale in Kano Nigeria",
     heading: "Trucks",
-    description: "Powerful, reliable trucks build to handle every job with ease."
+    description:
+      "Explore powerful, durable trucks for sale at Mugathman Motors — your trusted truck dealer in Kano. Built to handle logistics, construction, and long-distance hauling with ease."
   },
   {
     image: "/product-2.jpg",
+    alt: "Tractors and bulldozers for sale in Nigeria",
     heading: "Tractors & Dozers",
-    description: "Heavy duty tractors and dozers tough farm and construction work."
+    description:
+      "Get heavy-duty tractors and dozers engineered for strength and long performance. Ideal for farms and construction projects across Kano and throughout Nigeria."
   },
   {
     image: "/product-3.jpg",
+    alt: "Affordable cars for sale in Kano",
     heading: "Cars",
-    description: "Efficient and eco-friendly cars for everyday use and off-road adventures."
+    description:
+      "Discover efficient and affordable cars for personal and business use. From compact models to off-road vehicles, Mugathman Motors offers reliable options trusted nationwide."
   },
   {
-    image: "/product-4.jpg",
-    heading: "Spare parts",
-    description: "Genuine spare parts to keep your vehicles running smoothly at peak performance."
+    image: "/product-7.jpeg",
+    alt: "Genuine vehicle spare parts supplier in Nigeria",
+    heading: "Spare Parts",
+    description:
+      "Keep your vehicles performing at their best with genuine spare parts from Mugathman Motors. Available locally in Kano with delivery options across Nigeria."
+  },
+  {
+    image: "/product-5.jpeg",
+    alt: "Engine Oil Image",
+    heading: "Engine Oil",
+    description: "Premium-grade engine oils that protect engines from wear and enhance performance for cars, trucks, and tractors in any condition."
+  },
+  {
+    image: "/product-6.jpeg",
+    alt: "Solar System Image",
+    heading: "Solar Systems",
+    description: "Reliable solar power systems for homes and businesses, helping you enjoy sustainable, cost-efficient energy solutions anywhere in Nigeria."
   }
-]
+];
+
 
 const testimonials = [
   {
@@ -77,24 +100,24 @@ export default function Home() {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-      <section className="h-[80vh] flex flex-col justify-center bg-[url('/hero.png')] bg-cover bg-center text-white">
-        <div className="p-8" >
-          <h1 className="text-5xl md:text-6xl font-bold">Trust Vehicles <br /> Nationwide Logistics</h1>
-          <p className="mt-4 text-lg">
-            Explore our top-quality vehicles and nationwide logistics services.
+      <section className="h-[80vh] flex flex-col justify-center bg-[url('/hero-top-2.jpg')] bg-cover bg-right text-white">
+        <div className="h-full md:w-2/5 p-8 flex flex-col justify-center backdrop-blur-sm bg-white/20 border border-white/30 rounded-2xl shadow-lg my-20 mx-10">
+          <h1 className="text-5xl md:text-6xl font-bold">Powering Construction, Farming, and Logistics Across Nigeria</h1>
+          <p className="mt-4 text-lg md:text-xl">
+            From reliable <b>trucks and tractors to trailers, dozers,<br /> and spare parts</b>, Mugathman Motors delivers <b>trusted vehicles<br /> and logistics solutions</b> nationwide.
           </p>
           <div className="flex gap-5">
             <Button 
             variant="default" 
             size="default" 
-            className="mt-4 px-4 py-2 bg-[#150150] hover:bg-[#0f0150f6] text-white rounded-full"
+            className="mt-4 px-10 py-5 bg-[#150150] hover:bg-indigo-800 text-white rounded-full"
             asChild>
               <Link href="/contact#enquiry-form">Make an enquiry</Link>
             </Button>
             <Button
             variant="default" 
             size="default"
-            className="mt-4 px-4 py-2 bg-white hover:bg-white text-[#150150] rounded-full"
+            className="hover:text-[#150150] mt-4 px-10 py-5 hover:bg-white rounded-full bg-transparent text-white border-2 border-white"
             asChild>
               <Link href="/contact#contact-section">Contact Us</Link>
             </Button>
@@ -103,22 +126,29 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="bg-[#f8f4ff] text-center py-12">
-        <div className=" w-full md:w-1/2 mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-4">About Mugathman Motors</h2>
+      <section className="container flex flex-col md:flex-row justify-center items-center gap-10 py-12 mx-auto">
+        <div className="w-full md:w-1/2 mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">About Mugathman Motors</h2>
           <p className="text-lg">
-            Mugathman motors offered a wide range of vehicles including
-            <b> trucks , cars, farm tractors and quality spare parts </b>
-            to meet all your logistics and transportation needs.
+            Mugathman Motors is a trusted truck and spare parts dealer based in Kano, Nigeria, offering a wide range of vehicles including <b>trucks, cars, farm tractors, and quality spare parts</b> to meet all logistics, transportation, and agricultural needs.
           </p>
+        </div>
+        <div className=" w-full md:w-1/3 mx-auto px-4">
+          <Image
+            src="/product-8.jpeg"
+            alt="About Mugathman Motors - Truck Dealer & Spare Parts in Kano, Nigeria"
+            className="rounded-lg"
+            width={500}
+            height={300}
+          />
         </div>
       </section>
 
-      {/* Product Section */}
-      <section className="bg-[#f8f4ff] py-12">
+      {/* Products Category */}
+      <section className="container py-12 mx-auto">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold mb-4">Our Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">Our Products Category</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {products.map((item, index) => (
               <ProductCard key={index} {...item} />
             ))}
@@ -127,9 +157,9 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="bg-[#eff4fd] py-12">
+      <section className="container bg-[#eff4fd] py-12 mx-auto">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold mb-4">What our customers are saying</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">What our customers are saying</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {testimonials.map((item, index) => (
                 <TestimonialCard key={index} {...item} />
@@ -140,6 +170,9 @@ export default function Home() {
 
         {/* Contact us section */}
         <ContactSection />
+
+        {/* Map Section */}
+        <Map />
 
         {/* Email list section */}
         <SubscribeToEmailList />
