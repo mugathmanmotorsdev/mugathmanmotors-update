@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navigator from "./Navigators";
+import {FaFacebook, FaTiktok, FaYoutube} from "react-icons/fa"
 
 export default function Footer() {
     return(
@@ -15,6 +16,17 @@ export default function Footer() {
                 </p>
             </div>  
             <Navigator />
+            <div className="flex gap-5 items-center justify-center">
+                <div>
+                    <a target="_blank" href="https://www.tiktok.com/@mugathman_motors?is_from_webapp=1&sender_device=pc"><FaTiktok /></a>
+                </div>
+                <div>
+                    <a target="_blank" href="https://youtube.com/@mugathmanmotors?si=HCEMYU6dGM7IaXvr"><FaYoutube /></a>
+                </div>
+                <div>
+                    <a target="_blank" href="https://web.facebook.com/profile.php?id=61583124653834"><FaFacebook /></a>
+                </div>          
+            </div>
             <p className="text-center">Copyright &copy; Mugathman Motors 2023</p>
         </section>
     )

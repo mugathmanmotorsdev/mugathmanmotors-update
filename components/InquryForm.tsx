@@ -40,9 +40,9 @@ export default function InquiryForm() {
     }
     
     return (
-        <section id="enquiry-form" className="w-1/3 mx-auto py-12">
+        <section id="enquiry-form" className="w-full md:w-1/3 mx-0 md:mx-auto">
             <Toaster richColors position="top-center"/>
-            <Card className="p-8 shadow-lg border-2 border-gray-300">
+            <Card className="md:p-8 m-0 mx-auto shadow-lg border-2 border-gray-300">
                 <CardHeader>
                     <CardTitle className="font-bold text-2xl my-5">Get In Touch</CardTitle>
                     <CardDescription className="text-lg">

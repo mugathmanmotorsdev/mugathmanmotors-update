@@ -6,7 +6,7 @@ import InquiryForm from "./InquryForm";
 export default function ContactSection() {
     
     return (
-        <section id="contact-section" className="container mx-auto p-12">
+        <section id="contact-section" className="container mx-auto md:px-12 px-5 py-12">
           <div className="conainer mx-auto flex flex-col md:flex-row gap-16 items-center justify-center">
             {/* Contact us section details */}
             <div className="flex flex-col gap-5 md:w-1/2">
