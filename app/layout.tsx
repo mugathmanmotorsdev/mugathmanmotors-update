@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Navigator from "@/components/Navigators";
-import { icons } from "lucide-react";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const geistSans = Geist({
@@ -38,9 +37,10 @@ export const metadata = {
   }
 };
 
+
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
+  return(
+    <html>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

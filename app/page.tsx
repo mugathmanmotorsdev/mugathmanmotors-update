@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import Map from "@/components/Map";
+import { ChevronRight, Star } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 export const metadata = {
   title: "Mugathman Motors – Truck Dealer & Spare Parts in Kano, Nigeria",
@@ -100,46 +102,87 @@ export default function Home() {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-      <section className="h-[80vh] flex flex-col justify-center bg-[url('/hero-top-v2.jpg')] bg-cover bg-center text-white">
-        <div className="h-full md:w-2/5 p-5 flex flex-col justify-center my-20 md:mx-10">
-          <h1 className="text-5xl md:text-6xl font-bold">Powering Construction, Farming, and Logistics Across Nigeria</h1>
-          <p className="mt-4 text-lg md:text-xl">
-            From reliable <b>trucks and tractors to trailers, dozers,<br /> and spare parts</b>, Mugathman Motors delivers <b>trusted vehicles<br /> and logistics solutions</b> nationwide.
-          </p>
-          <div className="flex gap-5">
-            <Button 
-            variant="default" 
-            size="default" 
-            className="mt-4 px-10 py-5 bg-[#150150] hover:bg-indigo-800 text-white rounded-full"
-            asChild>
-              <Link href="/contact#enquiry-form">Make an enquiry</Link>
-            </Button>
-            <Button
-            variant="default" 
-            size="default"
-            className="hover:text-[#150150] mt-4 px-10 py-5 hover:bg-white rounded-full bg-transparent text-white border-2 border-white"
-            asChild>
-              <Link href="/contact#contact-section">Contact Us</Link>
-            </Button>
+      <section className="h-[80vh] flex flex-col justify-center bg-[url('/howo-hero-2.png')] bg-cover bg-center bg-cente px-2 md:px-12 text-white mx-5 rounded-2xl">
+        <div className="md:w-[55vw] flex flex-col gap-8">
+          <h1 className="text-5xl md:text-6xl font-bold font-(family-name:--font-duru-sans)">
+            Powering Construction, Farming, and Logistics Across Nigeria
+          </h1>
+          <p className="mt-4 md:text-xl">
+              From reliable <b>trucks and tractors to trailers, dozers,<br /> and spare parts</b>, Mugathman Motors delivers <b>trusted vehicles<br /> and logistics solutions</b> nationwide.
+            </p>
+            <div className="flex gap-5">
+              <Button 
+              variant="default" 
+              size="default" 
+              className="mt-4 py-5 px-2 pl-5 bg-white hover:bg-transparent hover:text-white border-2 border-white text-black rounded-full"
+              asChild>
+                <Link href="/contact#enquiry-form">Contact Us 
+                <span className="inline-block bg-black p-2 text-white rounded-full ml-3">
+                  <ChevronRight />
+                </span>
+                </Link> 
+              </Button>
+            </div> 
+        </div>
+
+        {/* <div className="flex justify-between absolute bottom-0 inset-x-0 px-12 py-10">
+          <div>
+            <h3>Trusted by:</h3>
+            <div className="flex items-center gap-10">
+              <Image src="/sinotruk.png" width={100} height={200} alt="sinotruck logo" />
+              <Image src="/createk.png" width={100} height={200} alt="createk logo" />
+            </div>
           </div>
+          <div className="flex items-center gap-5" >
+            <div>
+              <h2 className="text-7xl font-semibold">700+</h2>
+              <p className="text-lg">Products Sold</p>
+            </div>
+            <Separator orientation="vertical" />
+            <div>
+              <h2 className="text-7xl font-semibold">350+</h2>
+              <p className="text-lg">Happy Customers</p>
+            </div>
+          </div>
+        </div> */}
+      </section>
+
+      <section className="container py-12 mx-auto flex flex-col md:flex-row gap-10 justify-around">
+        <div>
+          <h2 className="text-7xl font-semibold">700+</h2>
+          <p className="text-lg">Products Sold</p>
+        </div>
+        <div>
+          <Separator orientation="vertical" className="bg-black" />
+        </div>
+        <div>
+          <h2 className="text-7xl font-semibold">99%</h2>
+          <p className="text-lg">Client Satisfaction</p>
+        </div>
+        <div>
+          <Separator orientation="vertical" className="bg-black" />
+        </div>
+        <div>
+          <h2 className="text-7xl font-semibold">550+</h2>
+          <p className="text-lg">Happy Customers</p>
         </div>
       </section>
 
       {/* About Us Section */}
-      <section className="container flex flex-col md:flex-row justify-center items-center gap-10 py-12 mx-auto">
+      <section className="container mx-auto h-[60vh] flex flex-col md:flex-row justify-center items-center gap-10 py-12">
         <div className="w-full md:w-1/2 mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">About Mugathman Motors</h2>
           <p className="text-lg">
             Mugathman Motors is a trusted truck and spare parts dealer based in Kano, Nigeria, offering a wide range of vehicles including <b>trucks, cars, farm tractors, and quality spare parts</b> to meet all logistics, transportation, and agricultural needs.
           </p>
         </div>
-        <div className=" w-full md:w-1/3 mx-auto px-4">
+        <div className=" w-full md:w-1/2 mx-auto px-4">
           <Image
             src="/hero-top-2.jpg"
             alt="About Mugathman Motors - Truck Dealer & Spare Parts in Kano, Nigeria"
             className="rounded-lg"
-            width={500}
-            height={300}
+            width={700}
+            height={700}
           />
         </div>
       </section>
@@ -157,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="container bg-[#eff4fd] py-12 mx-auto">
+      <section className="mx-12 rounded-2xl bg-[#eff4fd] py-12">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">What our customers are saying</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
