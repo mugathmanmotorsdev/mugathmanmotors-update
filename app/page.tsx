@@ -124,27 +124,6 @@ export default function Home() {
               </Button>
             </div> 
         </div>
-
-        {/* <div className="flex justify-between absolute bottom-0 inset-x-0 px-12 py-10">
-          <div>
-            <h3>Trusted by:</h3>
-            <div className="flex items-center gap-10">
-              <Image src="/sinotruk.png" width={100} height={200} alt="sinotruck logo" />
-              <Image src="/createk.png" width={100} height={200} alt="createk logo" />
-            </div>
-          </div>
-          <div className="flex items-center gap-5" >
-            <div>
-              <h2 className="text-7xl font-semibold">700+</h2>
-              <p className="text-lg">Products Sold</p>
-            </div>
-            <Separator orientation="vertical" />
-            <div>
-              <h2 className="text-7xl font-semibold">350+</h2>
-              <p className="text-lg">Happy Customers</p>
-            </div>
-          </div>
-        </div> */}
       </section>
 
       <section className="container py-12 mx-auto flex flex-col md:flex-row gap-10 justify-around">
@@ -167,6 +146,7 @@ export default function Home() {
           <p className="text-lg">Happy Customers</p>
         </div>
       </section>
+
 
       {/* About Us Section */}
       <section className="container mx-auto h-[60vh] flex flex-col md:flex-row justify-center items-center gap-10 py-12">
