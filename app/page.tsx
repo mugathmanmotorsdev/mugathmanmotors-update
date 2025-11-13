@@ -180,7 +180,7 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="mx-12 rounded-2xl bg-[#eff4fd] py-12">
+      <section className="md:mx-12 md:rounded-2xl bg-[#eff4fd] py-12">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">What our customers are saying</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">

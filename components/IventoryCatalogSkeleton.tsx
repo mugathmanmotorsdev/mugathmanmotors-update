@@ -23,9 +23,9 @@ export default function InventoryCatalogSkeleton() {
                     </Button>
                 </div>
                 <div className="hidden md:flex flex-col gap-5">
-                    { [...Array(5)].map((category, index) => {
+                    { [...Array(5)].map((_, index) => {
                         return ( 
-                            <Skeleton className="w-50 h-6" />     
+                            <Skeleton key={index} className="w-50 h-6" />     
                         )
                     })}
                 </div>
@@ -41,7 +41,7 @@ export default function InventoryCatalogSkeleton() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
                     [...Array(6)].map((_, index) => (
-                        <div className="flex flex-col gap-4">
+                        <div key={index} className="flex flex-col gap-4">
                             <Skeleton className="mx-2 w-full h-60"/>
                             <Skeleton className="w-full h-5" />
                             <Skeleton className="w-full h-5" />
