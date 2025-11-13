@@ -126,7 +126,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container py-12 mx-auto flex flex-col md:flex-row gap-10 justify-around">
+      <section className="container py-12 mx-auto flex flex-col md:flex-row gap-10 justify-around items-center">
         <div>
           <h2 className="text-7xl font-semibold">700+</h2>
           <p className="text-lg">Products Sold</p>
