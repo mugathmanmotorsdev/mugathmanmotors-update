@@ -66,7 +66,7 @@ const products = [
     description: "Premium-grade engine oils that protect engines from wear and enhance performance for cars, trucks, and tractors in any condition."
   },
   {
-    image: "/product-6.jpeg",
+    image: "/solar.jpeg",
     alt: "Solar System Image",
     heading: "Solar Systems",
     description: "Reliable solar power systems for homes and businesses, helping you enjoy sustainable, cost-efficient energy solutions anywhere in Nigeria."

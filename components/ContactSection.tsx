@@ -1,7 +1,8 @@
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import InquiryForm from "./InquryForm";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function ContactSection() {
     
@@ -32,7 +33,7 @@ export default function ContactSection() {
                 href="https://wa.me/2348033395299" 
                 target="_blank"
                 className="flex gap-2 items-center">
-                  <MessageCircle size={25} className="text-white" />
+                  <FaWhatsapp size={16} className="text-white" />
                   <span>Let&lsquo;s Chat on WhatsApp</span>
                 </Link>
               </Button>

@@ -25,7 +25,7 @@ export default function InventoryList(
 ) {
     
 
-    const TOTAL_PRODUCT_PER_PAGE = 12
+    const TOTAL_PRODUCT_PER_PAGE = 9
 
     
 

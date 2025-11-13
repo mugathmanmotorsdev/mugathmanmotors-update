@@ -1,10 +1,8 @@
 import Footer from "@/components/Footer"
-import InventoryCatalog from "@/components/InventoryCatalog"
+import Inventory from "@/components/Inventory"
+import InventoryCatalogSkeleton from "@/components/IventoryCatalogSkeleton"
 import { Button } from "@/components/ui/button"
-import { allProductsQuery, categoriesQueries } from "@/lib/queries"
-import { client } from "@/lib/sanity"
-import { category } from "@/lib/types/category"
-import { product } from "@/lib/types/product"
+import { Suspense } from "react"
 
 export const metadata = {
   title: "Inventory | Mugathman Motors - Trucks, Tractors & Spare Parts in Nigeria",
@@ -20,15 +18,10 @@ export default async function Page(
   const { category, page, q } = (await searchParams)
   const pageNumber = parseInt(page || "1")
 
-  //Fetch products from sanity
-  const allProducts = await client.fetch(allProductsQuery) as product[];
-  const categories = await client.fetch(categoriesQueries) as category[]
-  console.log("Categories: ", categories)
-
   return (
       <div className="bg-white text-black">
           {/* Hero section */}
-          <section className="h-[80vh] flex flex-col justify-center items-center bg-[url('/inventory-hero-3.jpg')] bg-cover bg-left text-white">
+          <section className="h-[80vh] mx-5 rounded-2xl flex flex-col justify-center items-center bg-[url('/inventory-hero.jpg')] bg-cover bg-left text-white">
               <div className="text-center p-8 w-full" >
                   <h1 className="text-5xl md:text-6xl font-bold">Explore Our Inventory</h1>
                   <p className="md:w-3/5 mx-auto mt-4 text-lg">
@@ -42,13 +35,13 @@ export default async function Page(
               </div>
           </section>
 
-          <InventoryCatalog 
-          allProducts={allProducts}
-          pageNumber={pageNumber}
-          query={q}
-          category={category}
-          categories={categories.map((c: category) => c.title)}
-          />
+          <Suspense fallback={<InventoryCatalogSkeleton />}>
+            <Inventory 
+            pageNumber={pageNumber}
+            query={q}
+            category={category}
+            />
+          </Suspense>
 
           {/* Footer */}
           <Footer />

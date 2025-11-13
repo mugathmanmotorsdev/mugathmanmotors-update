@@ -102,14 +102,14 @@ export default function InventoryCatalog(
           </div>
           
           <section className="py-12 container mx-auto px-4">
-              <InventoryList 
-              products={products}
-              filteredProducts={filteredProducts}
-              category={category}
-              pageNumber={pageNumber}
-              totalPages={totalPages}
-              paginate={paginate}
-              /> 
+            <InventoryList 
+            products={products}
+            filteredProducts={filteredProducts}
+            category={category}
+            pageNumber={pageNumber}
+            totalPages={totalPages}
+            paginate={paginate}
+            />    
           </section>
         </section>    
       </>

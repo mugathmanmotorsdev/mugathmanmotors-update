@@ -5,6 +5,7 @@ import VideoCard from "@/components/VideoCard";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const metadata = {
   title: "About Mugathman Motors | Heavy-Duty Vehicle & Equipment Dealer in Nigeria",
@@ -19,7 +20,14 @@ const videos = [
         videoId: "wLvfHQU1XfI",
         title: "Mugathman Motors journey",
         url: "https://www.youtube.com/watch?v=wLvfHQU1XfI",
+        desc: "Watch our mission video to learn more about our company and our commitment to excellence."
     },
+    {
+        videoId: "tULv6D4BS88",
+        title: "Our products exploration",
+        url: "https://www.youtube.com/watch?v=tULv6D4BS88",
+        desc: "Watch our product exploration video to see our range of heavy-duty vehicles and equipment."
+    }
 ];
 
 const teamHeads = [
@@ -87,31 +95,27 @@ export default function Page() {
     return (
         <div className="bg-white text-black">
             {/* About Section */}
-            <section>
-                <div className="text-center my-10 w-[95vw] mx-auto rounded-2xl bg-[url('/hero-top-2-v2.jpg')] bg-cover bg-center min-h-[80vh] text-white flex flex-col justify-center">
-                    <h2 className="text-5xl md:text-7xl font-bold my-5">About Us</h2>
-                    <p className="md:text-2xl">Driven by Excellence in Heavy Machinery, <br /> Energy and Logistics Built on Trust</p>
-                    <div className="flex gap-2 justify-center w-24 h-1 mx-auto my-5 rounded-full">
-                        <Button className={"bg-[#150150] hover:bg-[#0f0150f6] text-white rounded-full md:px-10 md:py-5"} asChild>
-                            <Link href="/contact#enquiry-form">Make an Enquiry</Link>
-                        </Button>
-                        <Button className={"bg-green-600 hover:bg-green-700 text-white rounded-full md:px-10 md:py-5 ml-5"} asChild>
-                            <Link href="https://wa.me/2348033395299" target="_blank">Chat on WhatsApp</Link>
-                        </Button>
-                    </div>
+            <section className="flex flex-col-reverse md:flex-col gap-5">
+                <div className="flex flex-col md:flex-row gap-5 md:gap-20 justify-between items-start px-5 md:px-12 my-10">
+                    <h2 className="md:w-1/2 text-3xl font-bold">About Mugathman Motors: Leading Heavy-Duty Machinery, Truck and Tractor Dealer in Kano and Across Nigeria</h2>
+                    <div className="md:w-1/2 flex flex-col gap-5">
+                        <p className="text-lg">
+                            Mugathman Motors and Logistics Ltd (RC: 1643911) is a leading Nigerian dealer in heavy-duty trucks, tractors, trailers, tippers, and genuine spare parts. Established in 2019 by Alhaji Gali Muhammad Usman, we serve the transportation, construction, and agriculture sectors across Nigeria.
+                            At Mugathman Motors, we’re driving Nigeria’s mobility and logistics industry through quality, innovation, and customer satisfaction.
+                        </p>
+                        <div className="flex h-1 rounded-full">
+                            <Button className={"bg-[#150150] border-2 border-[#150150] hover:bg-transparent hover:text-black text-white rounded-full md:px-10 md:py-5"} asChild>
+                                <Link href="/contact#enquiry-form">Contact Us</Link>
+                            </Button>
+                            <Button className={"bg-green-600 hover:bg-green-700 text-white rounded-full md:px-10 md:py-5 ml-5"} asChild>
+                                <Link href="https://wa.me/2348033395299" target="_blank"><FaWhatsapp /></Link>
+                            </Button>
+                        </div>
+                    </div> 
                 </div>
-                
-
-                <div className="container mx-auto md:text-center px-5 my-10">
-                    <h2 className="text-3xl font-bold my-5">Mugathman Motors Journey</h2>
-                    <p className="text-lg">
-                         Mugathman Motors and Logistics Ltd, founded by Alhaji Gali Muhammad Usman and officially registered in 2019 (RC: 1643911), is a proudly Nigerian company leading the market in heavy-duty vehicle and equipment sales. We specialize in truck heads, trailers, tippers, tractors, and genuine spare parts, offering durable solutions for transportation, agriculture, and construction sectors across Nigeria.
-
-                        With over 1,000 units sold nationwide, Mugathman Motors has earned a reputation for reliability, integrity, and exceptional after-sales service. Our dedicated logistics support ensures clients receive timely and efficient delivery for every order — from individual buyers to large-scale organizations.
-
-                        Driven by quality, innovation, and customer satisfaction, Mugathman Motors continues to power Nigeria’s mobility and logistics industry with trusted vehicles and energy solutions built for lasting performance.
-                    </p>
-                </div>
+                <div className="text-center w-[95vw] min-h-[50vh] mx-auto rounded-2xl bg-[url('/hero-top-2-v2.jpg')] bg-cover bg-center  text-white flex flex-col justify-center">
+                    {/*hero image  */}
+                </div>                
             </section>
 
             {/* Mission & Vision Section */}
