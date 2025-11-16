@@ -126,19 +126,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container py-12 mx-auto flex flex-col md:flex-row gap-10 justify-around items-center">
+      <section className="container py-12 mx-auto flex flex-col md:flex-row gap-10 justify-around items-center text-center md:text-left">
         <div>
           <h2 className="text-7xl font-semibold">700+</h2>
           <p className="text-lg">Products Sold</p>
         </div>
-        <div>
+        <div className="h-30 hidden md:block">
           <Separator orientation="vertical" className="bg-black" />
         </div>
         <div>
           <h2 className="text-7xl font-semibold">99%</h2>
           <p className="text-lg">Client Satisfaction</p>
         </div>
-        <div>
+        <div className="h-30 hidden md:block">
           <Separator orientation="vertical" className="bg-black" />
         </div>
         <div>
