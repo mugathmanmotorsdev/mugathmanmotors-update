@@ -10,9 +10,9 @@ export const metadata = {
 
 export default function Page() { 
     return (
-        <div className="bg-white text-black">
-            <section className="flex flex-col gap-5 items-center justify-center container mx-auto bg-gray-200 rounded-2xl py-12 px-5 my-10 bg-linear-to-br from-[#F8F4FF] via-indigo-200 to-[#eff4fd]">
-                <h2 className="font-bold text-7xl">Contact US</h2>
+        <div className="bg-white">
+            <section className="flex flex-col gap-5 items-center justify-center text-white mx-5 h-[50vh] bg-gray-200 rounded-2xl py-12 px-5 my-10 bg-linear-to-br from-[#F8F4FF] via-indigo-200 to-[#eff4fd] bg-[url('/hero-top-v2.jpg')] bg-cover bg-center">
+                <h2 className="font-bold text-3xl md:text-7xl">Contact Us</h2>
                 <p className="text-2xl text-center md:w-1/3 mx-auto">
                     Get in touch with us and let us know how we can help you. 
                     We are here to assist you with any questions or concerns you may have.
