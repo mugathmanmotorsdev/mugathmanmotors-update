@@ -158,7 +158,7 @@ export default function Home() {
         </div>
         <div className=" w-full md:w-1/2 mx-auto px-4">
           <Image
-            src="/hero-top-2.jpg"
+            src="/about.png"
             alt="About Mugathman Motors - Truck Dealer & Spare Parts in Kano, Nigeria"
             className="rounded-lg"
             width={700}
