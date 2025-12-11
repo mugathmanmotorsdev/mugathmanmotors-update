@@ -107,9 +107,6 @@ export default function Page() {
                             <Button className={"bg-[#150150] border-2 border-[#150150] hover:bg-transparent hover:text-black text-white rounded-full md:px-10 md:py-5"} asChild>
                                 <Link href="/contact#enquiry-form">Contact Us</Link>
                             </Button>
-                            <Button className={"bg-green-600 hover:bg-green-700 text-white rounded-full md:px-10 md:py-5 ml-5"} asChild>
-                                <Link href="https://wa.me/2348033395299" target="_blank"><FaWhatsapp /></Link>
-                            </Button>
                         </div>
                     </div> 
                 </div>

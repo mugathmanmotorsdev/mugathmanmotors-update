@@ -2,7 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Navigator from "@/components/Navigators";
-import { GoogleAnalytics } from "@next/third-parties/google"
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
+import StikyWhatsAppButton from "@/components/StikyWhatsappButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +41,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return(
-    <html>
+    <html lang="en" className="scroll-smooth">
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -52,9 +55,10 @@ export default function RootLayout({ children }) {
           </div>
           <Navigator responsive={true} />
         </header>
+        <StikyWhatsAppButton />
         {children}
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+     
     </html>
   );
 }

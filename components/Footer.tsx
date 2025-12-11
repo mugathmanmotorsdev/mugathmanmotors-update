@@ -32,27 +32,30 @@ export default function Footer() {
                     <p className="text-center md:text-left">Copyright &copy; Mugathman Motors 2023</p>
                 </div>
             
-                <div className="flex flex-col gap-8">
-                    <h2 className="text-lg font-semibold">Pages</h2>
-                    <ul className={"flex flex-col gap-4 bg-transparent"}>
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="/about">About</Link></li>
-                        <li><Link href="/inventory">Inventory</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
-                    </ul>
-                </div>
+                <div className="flex gap-16">
+                    <div className="flex flex-col gap-8">
+                        <h2 className="text-lg font-semibold">Pages</h2>
+                        <ul className={"flex flex-col gap-4 bg-transparent"}>
+                            <li><Link href="/">Home</Link></li>
+                            <li><Link href="/about">About</Link></li>
+                            <li><Link href="/inventory">Inventory</Link></li>
+                            <li><Link href="/contact">Contact</Link></li>
+                        </ul>
+                    </div>
 
-                <div className="flex flex-col gap-8">
-                    <h2 className="text-lg font-semibold">Products</h2>
-                    <div className="flex flex-col gap-4">
-                        <p>Trucks</p>
-                        <p>Tractors and Dozers</p>
-                        <p>Cars</p>
-                        <p>Spare parts</p>
-                        <p>Engine oil</p>
-                        <p>Solar Systems</p>
-                    </div>   
+                    <div className="flex flex-col gap-8">
+                        <h2 className="text-lg font-semibold">Products</h2>
+                        <div className="flex flex-col gap-4">
+                            <p>Trucks</p>
+                            <p>Tractors and Dozers</p>
+                            <p>Cars</p>
+                            <p>Spare parts</p>
+                            <p>Engine oil</p>
+                            <p>Solar Systems</p>
+                        </div>   
+                    </div>
                 </div>
+                
             </div>
         </section>
     )

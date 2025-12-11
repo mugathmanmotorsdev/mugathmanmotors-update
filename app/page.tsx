@@ -114,9 +114,9 @@ export default function Home() {
               <Button 
               variant="default" 
               size="default" 
-              className="mt-4 py-5 px-2 pl-5 bg-white hover:bg-transparent hover:text-white border-2 border-white text-black rounded-full"
+              className="mt-4 py-5 md:py-7 md:px-5 pl-5 bg-white hover:bg-transparent hover:text-white border-2 border-white md:text-xl font-bold text-black rounded-full"
               asChild>
-                <Link href="/contact#enquiry-form">Contact Us 
+                <Link href="#enquiry-form">Contact Us 
                 <span className="inline-block bg-black p-2 text-white rounded-full ml-3">
                   <ChevronRight />
                 </span>
@@ -180,7 +180,7 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="md:mx-12 md:rounded-2xl bg-[#eff4fd] py-12">
+      <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">What our customers are saying</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -193,12 +193,14 @@ export default function Home() {
 
         {/* Contact us section */}
         <ContactSection />
+        
 
         {/* Map Section */}
         <Map />
 
         {/* Email list section */}
-        <SubscribeToEmailList />
+        {/* this section is freeze */}
+        {/* <SubscribeToEmailList /> */}
 
         {/* Footer */}
         <Footer />
