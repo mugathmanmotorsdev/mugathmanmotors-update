@@ -1,13 +1,12 @@
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import TestimonialCard from "@/components/TestimonialCard";
-import SubscribeToEmailList from "../components/SubscribeToEmailList";
 import ContactSection from "@/components/ContactSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import Map from "@/components/Map";
-import { ChevronRight, Star } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export const metadata = {
