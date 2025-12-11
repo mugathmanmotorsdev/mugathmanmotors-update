@@ -1,7 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function ContactSection() {
