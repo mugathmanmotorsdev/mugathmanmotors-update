@@ -18,7 +18,7 @@ export default function ContactSection() {
         className="md:container mx-5 md:mx-auto my-10 overflow-hidden bg-white h-[800px] md:h-[600px] rounded-lg flex flex-col md:flex-row">
           <div className="md:w-1/2 flex flex-col md:flex-row gap-16 items-center py-10">
             {/* Contact us section details */}
-            <div className="flex flex-col gap-5 px-10 text-xl">
+            <div className="w-full flex flex-col gap-5 px-10 text-xl">
               <h2 className="text-3xl md:text-4xl font-semibold mb-4">Contact us</h2>
               <div className="flex gap-3 items-center text-xl">
                 <MapPin size={25} className="text-[#150150] flex-shrink-0" />
