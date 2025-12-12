@@ -1,6 +1,6 @@
 "use client";
 
-import { gtmevent } from "@/lib/utils";
+import { sendWhatssappEvent } from "@/lib/helper";
 import { FaWhatsapp } from "react-icons/fa";
 
 
@@ -15,7 +15,7 @@ export default function StikyWhatsAppButton() {
     >
      <FaWhatsapp 
      className="size-10 md:size-16"
-     onClick={gtmevent} />
+     onClick={sendWhatssappEvent} />
     </a>
   );
 }
