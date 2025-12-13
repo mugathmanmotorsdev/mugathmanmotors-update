@@ -11,7 +11,7 @@ export async function Inquiry(formData: FormData) {
     const message = formData.get("message") as string;
 
     //send email
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(api_key);
     const inquiry = await resend.emails.send({
         from: "Mugathman <enquiry@mugathmanmotors.com>",
         to: "info@mugathmanmotors.com",
