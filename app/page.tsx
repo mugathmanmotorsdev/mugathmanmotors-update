@@ -11,10 +11,12 @@ import { Separator } from "@/components/ui/separator";
 
 export const metadata = {
   title: "Mugathman Motors – Truck Dealer & Spare Parts in Kano, Nigeria",
-  description: "Mugathman Motors is a trusted truck dealer and spare parts supplier in Kano, Nigeria. We sell quality trucks, trailers, cars, farm tractors, and genuine parts to power your logistics and transport business.",
+  description:
+    "Mugathman Motors is a trusted truck dealer and spare parts supplier in Kano, Nigeria. We sell quality trucks, trailers, cars, farm tractors, and genuine parts to power your logistics and transport business.",
   openGraph: {
     title: "Mugathman Motors – Truck Dealer & Spare Parts in Kano, Nigeria",
-    description: "Mugathman Motors is a trusted truck dealer and spare parts supplier in Kano, Nigeria. We sell quality trucks, trailers, cars, farm tractors, and genuine parts to power your logistics and transport business.",
+    description:
+      "Mugathman Motors is a trusted truck dealer and spare parts supplier in Kano, Nigeria. We sell quality trucks, trailers, cars, farm tractors, and genuine parts to power your logistics and transport business.",
     url: "https://mugathmanmotors.com/",
     siteName: "Mugathman Motors",
     images: [
@@ -26,8 +28,8 @@ export const metadata = {
     ],
     locale: "en_US",
     type: "website",
-  }
-}
+  },
+};
 
 const products = [
   {
@@ -35,67 +37,71 @@ const products = [
     alt: "Heavy-duty truck for sale in Kano Nigeria",
     heading: "Trucks",
     description:
-      "Explore powerful, durable trucks for sale at Mugathman Motors — your trusted truck dealer in Kano. Built to handle logistics, construction, and long-distance hauling with ease."
+      "Explore powerful, durable trucks for sale at Mugathman Motors — your trusted truck dealer in Kano. Built to handle logistics, construction, and long-distance hauling with ease.",
   },
   {
     image: "/product-2.jpg",
     alt: "Tractors and bulldozers for sale in Nigeria",
     heading: "Tractors & Dozers",
     description:
-      "Get heavy-duty tractors and dozers engineered for strength and long performance. Ideal for farms and construction projects across Kano and throughout Nigeria."
+      "Get heavy-duty tractors and dozers engineered for strength and long performance. Ideal for farms and construction projects across Kano and throughout Nigeria.",
   },
   {
     image: "/product-3.jpg",
     alt: "Affordable cars for sale in Kano",
     heading: "Cars",
     description:
-      "Discover efficient and affordable cars for personal and business use. From compact models to off-road vehicles, Mugathman Motors offers reliable options trusted nationwide."
+      "Discover efficient and affordable cars for personal and business use. From compact models to off-road vehicles, Mugathman Motors offers reliable options trusted nationwide.",
   },
   {
     image: "/product-7.jpeg",
     alt: "Genuine vehicle spare parts supplier in Nigeria",
     heading: "Spare Parts",
     description:
-      "Keep your vehicles performing at their best with genuine spare parts from Mugathman Motors. Available locally in Kano with delivery options across Nigeria."
+      "Keep your vehicles performing at their best with genuine spare parts from Mugathman Motors. Available locally in Kano with delivery options across Nigeria.",
   },
   {
     image: "/product-5.jpeg",
     alt: "Engine Oil Image",
     heading: "Engine Oil",
-    description: "Premium-grade engine oils that protect engines from wear and enhance performance for cars, trucks, and tractors in any condition."
+    description:
+      "Premium-grade engine oils that protect engines from wear and enhance performance for cars, trucks, and tractors in any condition.",
   },
   {
     image: "/solar.jpeg",
     alt: "Solar System Image",
     heading: "Solar Systems",
-    description: "Reliable solar power systems for homes and businesses, helping you enjoy sustainable, cost-efficient energy solutions anywhere in Nigeria."
-  }
+    description:
+      "Reliable solar power systems for homes and businesses, helping you enjoy sustainable, cost-efficient energy solutions anywhere in Nigeria.",
+  },
 ];
-
 
 const testimonials = [
   {
     image: "/ismailmb.jpg",
     name: "Ismail MB",
     position: "Web Consultant & Developer",
-    testimonil: "Working with Mugathman Motors on their digital presence has given me deep insight into their professionalism. Beyond their physical inventory, they genuinely care about customer satisfaction, transparency, and long-term business growth.",
-    star: 5
+    testimonil:
+      "As a web consultant and developer working closely with Mugathman Motors, I’ve seen firsthand how intentionally they are using technology to simplify the truck-buying process for their customers. Their approach goes beyond selling vehicles—they are building a modern, customer-first operation.",
+    star: 5,
   },
   {
     image: "/advicer.jpg",
-    name: "Abba Yahaya Warawa",
-    position: "Advicer, Special duties",
-    testimonil: "As an advisor to Mugathman Motors, I have witnessed firsthand their commitment to integrity, customer satisfaction, and community development. Their leadership is visionary, and their staff is dedicated to delivering exceptional service. I am proud to be associated with this organization.",
-    star: 5
+    name: "Aminu Inuwa",
+    position: "Happy Customer",
+    testimonil:
+      "I truly love working with Mugathman Motors. The quality exceeded my expectations, and the entire process was smooth and very useful for my business. From the first inquiry to final delivery, everything was handled professionally.",
+    star: 5,
   },
   {
     image: "/product-2.jpg",
-    name: "Surajo Sani",
+    name: "Ahmad Danmallam",
     position: "General Manager",
-    testimonil: "I have been working with Mugathman Motors for over a decade, and I can attest to their commitment to excellence in every aspect of their business. From their quality products to their exceptional customer service, they are a true partner in success. I highly recommend Mugathman Motors to anyone looking for reliable and trustworthy logistics solutions.",
-    star: 5
+    testimonil:
+      "Their services are excellent, and the overall experience was very impressive. The team was professional, responsive, and truly committed to delivering quality. Everything was handled smoothly from start to finish.",
+    star: 5,
   },
-]
+];
 
 export default function Home() {
   return (
@@ -107,21 +113,33 @@ export default function Home() {
             Powering Construction, Farming, and Logistics Across Nigeria
           </h1>
           <p className="mt-4 md:text-xl">
-              From reliable <b>trucks and tractors to trailers, dozers,<br /> and spare parts</b>, Mugathman Motors delivers <b>trusted vehicles<br /> and logistics solutions</b> nationwide.
-            </p>
-            <div className="flex gap-5">
-              <Button 
-              variant="default" 
-              size="default" 
+            From reliable{" "}
+            <b>
+              trucks and tractors to trailers, dozers,
+              <br /> and spare parts
+            </b>
+            , Mugathman Motors delivers{" "}
+            <b>
+              trusted vehicles
+              <br /> and logistics solutions
+            </b>{" "}
+            nationwide.
+          </p>
+          <div className="flex gap-5">
+            <Button
+              variant="default"
+              size="default"
               className="mt-4 py-5 md:py-7 md:px-5 pl-5 bg-white hover:bg-transparent hover:text-white border-2 border-white md:text-xl font-bold text-black rounded-full"
-              asChild>
-                <Link href="#enquiry-form">Contact Us 
+              asChild
+            >
+              <Link href="#enquiry-form">
+                Contact Us
                 <span className="inline-block bg-black p-2 text-white rounded-full ml-3">
                   <ChevronRight />
                 </span>
-                </Link> 
-              </Button>
-            </div> 
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -146,13 +164,17 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* About Us Section */}
       <section className="container mx-auto h-[60vh] flex flex-col md:flex-row justify-center items-center gap-10 py-12">
         <div className="w-full md:w-1/2 mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">About Mugathman Motors</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            About Mugathman Motors
+          </h2>
           <p className="text-lg">
-            Mugathman Motors is a trusted truck and spare parts dealer based in Kano, Nigeria, offering a wide range of vehicles including <b>trucks, cars, farm tractors, and quality spare parts</b> to meet all logistics, transportation, and agricultural needs.
+            Mugathman Motors is a trusted truck and spare parts dealer based in
+            Kano, Nigeria, offering a wide range of vehicles including{" "}
+            <b>trucks, cars, farm tractors, and quality spare parts</b> to meet
+            all logistics, transportation, and agricultural needs.
           </p>
         </div>
         <div className=" w-full md:w-1/2 mx-auto px-4">
@@ -169,7 +191,9 @@ export default function Home() {
       {/* Products Category */}
       <section className="container py-12 mx-auto">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">Our Products Category</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            Our Products Category
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {products.map((item, index) => (
               <ProductCard key={index} {...item} />
@@ -180,29 +204,30 @@ export default function Home() {
 
       {/* Testimonial Section */}
       <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">What our customers are saying</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {testimonials.map((item, index) => (
-                <TestimonialCard key={index} {...item} />
-              ))}
-            </div>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            What our customers are saying
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {testimonials.map((item, index) => (
+              <TestimonialCard key={index} {...item} />
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Contact us section */}
-        <ContactSection />
-        
+      {/* Contact us section */}
+      <ContactSection />
 
-        {/* Map Section */}
-        <Map />
+      {/* Map Section */}
+      <Map />
 
-        {/* Email list section */}
-        {/* this section is freeze */}
-        {/* <SubscribeToEmailList /> */}
+      {/* Email list section */}
+      {/* this section is freeze */}
+      {/* <SubscribeToEmailList /> */}
 
-        {/* Footer */}
-        <Footer />
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

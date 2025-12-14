@@ -29,6 +29,15 @@ export default function Footer() {
                             <a target="_blank" href="https://web.facebook.com/profile.php?id=61583124653834"><FaFacebook size={20} /></a>
                         </div>          
                     </div>
+                    <div>
+                        <p>
+                            Built with ❤️ by <a 
+                            href="https://kuibit.com" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="underline"> KUIBIT</a>
+                        </p>
+                    </div>
                     <p className="text-center md:text-left">Copyright &copy; Mugathman Motors 2023</p>
                 </div>
             

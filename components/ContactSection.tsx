@@ -37,7 +37,7 @@ export default function ContactSection() {
               size="lg" 
               asChild>
                 <Link 
-                href="https://wa.me/2348033395299" 
+                href="/contact/whatsapp" 
                 target="_blank"
                 className="flex gap-2 items-center text-xl">
                   <FaWhatsapp className="size-8 text-white" />
