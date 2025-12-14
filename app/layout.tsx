@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navigator from "@/components/Navigators";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
 import StikyWhatsAppButton from "@/components/StikyWhatsappButton";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,10 +50,13 @@ export default function RootLayout({ children }) {
       >
         {/* Header */}
         <header className="flex justify-between bg-white text-black p-4 container mx-auto items-center">
-          <div className="flex gap-4">
-            <Image src="/logo.png" alt="logo" width={32} height={32} />
-            <h1 className="font-bold text-lg md:text-2xl">Mugathman Motors</h1>
+          <div className="">
+            <Link href="/" className="flex gap-4">
+              <Image src="/logo.png" alt="logo" width={32} height={32} />
+              <h1 className="font-bold text-lg md:text-2xl">Mugathman Motors</h1>
+            </Link>
           </div>
+          
           <Navigator responsive={true} />
         </header>
         <StikyWhatsAppButton />

@@ -9,8 +9,8 @@ export default function Whatsapp() {
     }
 
     return(
-        <div className="h-screen flex flex-col justify-center items-center">
-            <FaWhatsapp size={200} className="text-green-500 m-10" />
+        <div className="h-[90vh] flex flex-col justify-center items-center px-10 text-center">
+            <FaWhatsapp className="size-40 text-green-500 m-10" />
             <h1 className="text-3xl font-bold">Redirecting to WhatsApp...</h1>
             <p className="mt-4 text-lg">You will be redirected to WhatsApp shortly.</p> 
         </div>
