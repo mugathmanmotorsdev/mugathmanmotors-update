@@ -25,7 +25,7 @@ export default function ContactSection() {
               </div>
               <div className="flex gap-3 items-center text-xl">
                 <Phone size={25} className="text-[#150150] flex-shrink-0" />
-                <p>+2348033395299, <br />+2348067957545</p>
+                <p>{process.env.NEXT_PUBLIC_PHONE_NUMBER}</p>
               </div>
               <div className="flex gap-3 items-center text-xl">
                 <Mail size={25} className="text-[#150150] flex-shrink-0" />

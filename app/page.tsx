@@ -143,7 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container py-12 mx-auto flex flex-col md:flex-row gap-10 justify-around items-center text-center md:text-left">
+      <section className="container py-12 my-16 mx-auto flex flex-col md:flex-row gap-10 justify-around items-center text-center md:text-left">
         <div>
           <h2 className="text-7xl font-semibold">700+</h2>
           <p className="text-lg">Products Sold</p>
@@ -189,7 +189,7 @@ export default function Home() {
       </section>
 
       {/* Products Category */}
-      <section className="container py-12 mx-auto">
+      <section className="container py-12 mt-30 mx-auto">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
             Our Products Category
