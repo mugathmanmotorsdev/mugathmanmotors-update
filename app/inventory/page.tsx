@@ -19,7 +19,7 @@ export default async function Page(
   const pageNumber = parseInt(page || "1")
 
   return (
-      <div className="bg-white text-black">
+      <div className="bg-white text-black pt-20">
           {/* Hero section */}
           <section className="h-[80vh] mx-5 rounded-2xl flex flex-col justify-center items-center bg-[url('/inventory-hero.jpg')] bg-cover bg-left text-white">
               <div className="text-center p-8 w-full" >

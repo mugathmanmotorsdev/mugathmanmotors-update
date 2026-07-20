@@ -1,13 +1,10 @@
+import Hero from "@/components/Hero";
+import ProductsSection from "@/components/ProductsSection";
+import IndustriesSection from "@/components/IndustriesSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import ProductCard from "@/components/ProductCard";
-import TestimonialCard from "@/components/TestimonialCard";
-import ContactSection from "@/components/ContactSection";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import Image from "next/image";
-import Map from "@/components/Map";
-import { ChevronRight } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import AnimationInit from "@/components/AnimationInit";
 
 export const metadata = {
   title: "Mugathman Motors – Truck Dealer & Spare Parts in Kano, Nigeria",
@@ -31,200 +28,58 @@ export const metadata = {
   },
 };
 
-const products = [
-  {
-    image: "/product-6.jpeg",
-    alt: "Heavy-duty truck for sale in Kano Nigeria",
-    heading: "Trucks",
-    description:
-      "Explore powerful, durable trucks for sale at Mugathman Motors — your trusted truck dealer in Kano. Built to handle logistics, construction, and long-distance hauling with ease.",
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Mugathman Motors",
+  url: "https://mugathmanmotors.com",
+  logo: "https://mugathmanmotors.com/logo.png",
+  description: "Trusted truck dealer and spare parts supplier in Kano, Nigeria",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Danladi Nasidi Housing Estate, Marri Kumbotso LGA",
+    addressLocality: "Kano",
+    addressCountry: "NG",
   },
-  {
-    image: "/product-2.jpg",
-    alt: "Tractors and bulldozers for sale in Nigeria",
-    heading: "Tractors & Dozers",
-    description:
-      "Get heavy-duty tractors and dozers engineered for strength and long performance. Ideal for farms and construction projects across Kano and throughout Nigeria.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+234-814-889-6797",
+    contactType: "customer service",
+    email: "info@mugathmanmotors.com",
   },
-  {
-    image: "/product-3.jpg",
-    alt: "Affordable cars for sale in Kano",
-    heading: "Cars",
-    description:
-      "Discover efficient and affordable cars for personal and business use. From compact models to off-road vehicles, Mugathman Motors offers reliable options trusted nationwide.",
-  },
-  {
-    image: "/product-7.jpeg",
-    alt: "Genuine vehicle spare parts supplier in Nigeria",
-    heading: "Spare Parts",
-    description:
-      "Keep your vehicles performing at their best with genuine spare parts from Mugathman Motors. Available locally in Kano with delivery options across Nigeria.",
-  },
-  {
-    image: "/product-5.jpeg",
-    alt: "Engine Oil Image",
-    heading: "Engine Oil",
-    description:
-      "Premium-grade engine oils that protect engines from wear and enhance performance for cars, trucks, and tractors in any condition.",
-  },
-  {
-    image: "/solar.jpeg",
-    alt: "Solar System Image",
-    heading: "Solar Systems",
-    description:
-      "Reliable solar power systems for homes and businesses, helping you enjoy sustainable, cost-efficient energy solutions anywhere in Nigeria.",
-  },
-];
-
-const testimonials = [
-  {
-    image: "/ismailmb.jpg",
-    name: "Ismail MB",
-    position: "Web Consultant & Developer",
-    testimonil:
-      "As a web consultant and developer working closely with Mugathman Motors, I’ve seen firsthand how intentionally they are using technology to simplify the truck-buying process for their customers. Their approach goes beyond selling vehicles—they are building a modern, customer-first operation.",
-    star: 5,
-  },
-  {
-    image: "/advicer.jpg",
-    name: "Aminu Inuwa",
-    position: "Happy Customer",
-    testimonil:
-      "I truly love working with Mugathman Motors. The quality exceeded my expectations, and the entire process was smooth and very useful for my business. From the first inquiry to final delivery, everything was handled professionally.",
-    star: 5,
-  },
-  {
-    image: "/product-2.jpg",
-    name: "Ahmad Danmallam",
-    position: "General Manager",
-    testimonil:
-      "Their services are excellent, and the overall experience was very impressive. The team was professional, responsive, and truly committed to delivering quality. Everything was handled smoothly from start to finish.",
-    star: 5,
-  },
-];
+  sameAs: [
+    "https://www.tiktok.com/@mugathman_motors",
+    "https://youtube.com/@mugathmanmotors",
+    "https://web.facebook.com/profile.php?id=61583124653834",
+  ],
+};
 
 export default function Home() {
   return (
     <div className="bg-white text-black">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      {/* GSAP Animation Init */}
+      <AnimationInit />
+
       {/* Hero Section */}
-      <section className="h-[80vh] flex flex-col justify-center bg-[url('/howo-hero-2.png')] bg-cover bg-center bg-cente px-2 md:px-12 text-white mx-5 rounded-2xl">
-        <div className="md:w-[55vw] flex flex-col gap-8">
-          <h1 className="text-5xl md:text-6xl font-bold font-(family-name:--font-duru-sans)">
-            Powering Construction, Farming, and Logistics Across Nigeria
-          </h1>
-          <p className="mt-4 md:text-xl">
-            From reliable{" "}
-            <b>
-              trucks and tractors to trailers, dozers,
-              <br /> and spare parts
-            </b>
-            , Mugathman Motors delivers{" "}
-            <b>
-              trusted vehicles
-              <br /> and logistics solutions
-            </b>{" "}
-            nationwide.
-          </p>
-          <div className="flex gap-5">
-            <Button
-              variant="default"
-              size="default"
-              className="mt-4 py-5 md:py-7 md:px-5 pl-5 bg-white hover:bg-transparent hover:text-white border-2 border-white md:text-xl font-bold text-black rounded-full"
-              asChild
-            >
-              <Link href="#enquiry-form">
-                Contact Us
-                <span className="inline-block bg-black p-2 text-white rounded-full ml-3">
-                  <ChevronRight />
-                </span>
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
-      <section className="container py-12 my-16 mx-auto flex flex-col md:flex-row gap-10 justify-around items-center text-center md:text-left">
-        <div>
-          <h2 className="text-7xl font-semibold">700+</h2>
-          <p className="text-lg">Products Sold</p>
-        </div>
-        <div className="h-30 hidden md:block">
-          <Separator orientation="vertical" className="bg-black" />
-        </div>
-        <div>
-          <h2 className="text-7xl font-semibold">99%</h2>
-          <p className="text-lg">Client Satisfaction</p>
-        </div>
-        <div className="h-30 hidden md:block">
-          <Separator orientation="vertical" className="bg-black" />
-        </div>
-        <div>
-          <h2 className="text-7xl font-semibold">550+</h2>
-          <p className="text-lg">Happy Customers</p>
-        </div>
-      </section>
+      {/* Our Products Section */}
+      <ProductsSection />
 
-      {/* About Us Section */}
-      <section className="container mx-auto h-[60vh] flex flex-col md:flex-row justify-center items-center gap-10 py-12">
-        <div className="w-full md:w-1/2 mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            About Mugathman Motors
-          </h2>
-          <p className="text-lg">
-            Mugathman Motors is a trusted truck and spare parts dealer based in
-            Kano, Nigeria, offering a wide range of vehicles including{" "}
-            <b>trucks, cars, farm tractors, and quality spare parts</b> to meet
-            all logistics, transportation, and agricultural needs.
-          </p>
-        </div>
-        <div className=" w-full md:w-1/2 mx-auto px-4">
-          <Image
-            src="/about.png"
-            alt="About Mugathman Motors - Truck Dealer & Spare Parts in Kano, Nigeria"
-            className="rounded-lg"
-            width={700}
-            height={700}
-          />
-        </div>
-      </section>
+      {/* Industries We Serve Section */}
+      <IndustriesSection />
 
-      {/* Products Category */}
-      <section className="container py-12 mt-30 mx-auto">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            Our Products Category
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {products.map((item, index) => (
-              <ProductCard key={index} {...item} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Why Choose Us Section */}
+      <WhyChooseUs />
 
-      {/* Testimonial Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            What our customers are saying
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {testimonials.map((item, index) => (
-              <TestimonialCard key={index} {...item} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact us section */}
-      <ContactSection />
-
-      {/* Map Section */}
-      <Map />
-
-      {/* Email list section */}
-      {/* this section is freeze */}
-      {/* <SubscribeToEmailList /> */}
+      {/* CTA Section */}
+      <CTASection />
 
       {/* Footer */}
       <Footer />
