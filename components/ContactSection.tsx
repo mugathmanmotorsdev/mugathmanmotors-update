@@ -115,7 +115,7 @@ export default function ContactSection() {
                     </div>
                     <button
                         type="submit"
-                        className="w-full md:w-auto px-8 py-4 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-black focus:ring-offset-2"
+                        className="w-full md:w-auto px-8 py-4 bg-[#587FFF] text-white font-semibold hover:bg-[#587FFF]/80 transition-colors focus:ring-2 focus:ring-black focus:ring-offset-2"
                     >
                         Send Inquiry
                     </button>

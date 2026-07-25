@@ -221,7 +221,7 @@ export default function Header() {
       {isOpen && (
         <nav
           id="mobile-nav"
-          className="md:hidden fixed top-20 left-0 w-full h-screen bg-white border-t border-gray-100 shadow-lg z-40"
+          className="md:hidden fixed top-16 left-0 w-full h-screen bg-white border-t border-gray-100 shadow-lg z-40"
           aria-label="Mobile navigation"
         >
           <div className="flex flex-col p-4 gap-4">
