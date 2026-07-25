@@ -105,7 +105,7 @@ export default function Header() {
             {/* Products with Dropdown */}
             <div className="group flex items-center">
               <Link
-                href="/inventory"
+                href="#"
                 className={cn(
                   "flex items-center gap-1 text-sm font-medium transition-colors hover:text-[#587FFF]",
                   isActive("/inventory")
@@ -114,7 +114,6 @@ export default function Header() {
                       ? "text-black"
                       : istransparent ? "text-white" : "text-black"
                 )}
-                aria-current={isActive("/inventory") ? "page" : undefined}
               >
                 Products
                 <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
