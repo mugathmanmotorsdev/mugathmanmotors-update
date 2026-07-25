@@ -1,59 +1,126 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import { Button } from "./ui/button";
-import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa";
+import SectionLabel from "./SectionLabel";
 
 export default function ContactSection() {
-    
     return (
-      <section id="enquiry-form" className="my-12  bg-[#F5F5F7] py-10">
-        <h2 className="w-2/3 mx-auto text-4xl md:text-9xl font-semibold text-center mb-8">
-          Let us know if we <span className="text-[#47AFCB]">can help</span> you
-        </h2>
-        <p className="md:w-2/3 mx-5 md:mx-auto text-center text-xl mb-10">
-          Reach out to us anytime — our dedicated team is ready to guide you, answer your questions, provide expert support, and ensure you make the right purchase with confidence and peace of mind
-        </p>
-        <div id="contact-section" 
-        className="md:container mx-5 md:mx-auto my-10 overflow-hidden bg-white h-[800px] md:h-[600px] rounded-lg flex flex-col md:flex-row">
-          <div className="md:w-1/2 flex flex-col md:flex-row gap-16 items-center py-10">
-            {/* Contact us section details */}
-            <div className="w-full flex flex-col gap-5 px-10 text-xl">
-              <h2 className="text-3xl md:text-4xl font-semibold mb-4">Contact us</h2>
-              <div className="flex gap-3 items-center text-xl">
-                <MapPin size={25} className="text-[#150150] flex-shrink-0" />
-                <p>Danladi Nasidi Housing Estate, Mariri Kumbotso LGA Kano state, Nigeria.</p>
-              </div>
-              <div className="flex gap-3 items-center text-xl">
-                <Phone size={25} className="text-[#150150] flex-shrink-0" />
-                <p>{process.env.NEXT_PUBLIC_PHONE_NUMBER}</p>
-              </div>
-              <div className="flex gap-3 items-center text-xl">
-                <Mail size={25} className="text-[#150150] flex-shrink-0" />
-                <p>info@mugathmanmotors.com</p>
-              </div>
-              <Button 
-              className="w-52 md:w-64 bg-green-600 hover:bg-green-700 text-white rounded-full my-5 py-0" 
-              variant="default" 
-              size="lg" 
-              asChild>
-                <Link 
-                href="/contact/whatsapp" 
-                target="_blank"
-                className="flex gap-2 items-center text-xl">
-                  <FaWhatsapp className="size-8 text-white" />
-                  <span>WhatsApp chat</span>
-                </Link>
-              </Button>
+        <section id="enquiry-form" className="grid grid-cols-1 md:grid-cols-12 gap-12 my-12">
+            {/* Left Column (Details) */}
+            <div className="md:col-span-5 flex flex-col items-start">
+                <SectionLabel text="Our Products" />
+
+                <h2 className="text-3xl md:text-5xl font-bold text-black tracking-tight mt-6">
+                    Let&apos;s Get In Touch
+                </h2>
+
+                <div className="space-y-4 text-black text-sm md:text-base pt-6 md:pt-10 leading-relaxed">
+                    <p className="font-semibold">{process.env.NEXT_PUBLIC_PHONE_NUMBER || "2348065259121"}</p>
+                    <p className="font-semibold">
+                        <a href="mailto:info@mugathmanmotors.com" className="hover:underline">
+                            info@mugathmanmotors.com
+                        </a>
+                    </p>
+                    <p className="font-semibold max-w-xs">
+                        Danladi Nasidi Housing Estate, Mariri Kumbotso LGA Kano state, Nigeria.
+                    </p>
+                </div>
             </div>
-            
-           
-            {/* Inquiry form section */}
-            {/* this component is freezed */}
-            {/* <InquiryForm /> */}
-          </div> 
-    
-          <div className="md:w-1/2 h-[400px] md:h-[100%] bg-[url('/contact-image.jpg')] bg-cover bg-center md:block"></div>
-        </div>
-      </section>
-    )
+
+            {/* Right Column (Contact Form) */}
+            <div className="md:col-span-7">
+                <form className="space-y-6 bg-gray-50 p-8 md:p-12 rounded-xl" action="/api/contact" method="POST">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                                Full Name <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                                placeholder="John Doe"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                                Email Address <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                                placeholder="john@example.com"
+                            />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                                Phone Number
+                            </label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                                placeholder="+234 801 234 5678"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                                Company / Organization
+                            </label>
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                                placeholder="Mugathman Motors"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label htmlFor="product" className="block text-sm font-medium text-gray-700 mb-2">
+                            Product of Interest
+                        </label>
+                        <select
+                            id="product"
+                            name="product"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                        >
+                            <option value="">Select a product</option>
+                            <option value="dump-trucks">Dump Trucks</option>
+                            <option value="tractor-heads">Tractor Heads</option>
+                            <option value="lpg-tank-trailers">LPG Tank Trailers</option>
+                            <option value="tractors">Tractors</option>
+                            <option value="cars">Cars</option>
+                            <option value="spare-parts">Spare Parts</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                            Message <span className="text-red-500">*</span>
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            rows={5}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                            placeholder="Tell us about your requirements, timeline, and any specific questions..."
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        className="w-full md:w-auto px-8 py-4 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-black focus:ring-offset-2"
+                    >
+                        Send Inquiry
+                    </button>
+                </form>
+            </div>
+        </section>
+    );
 }

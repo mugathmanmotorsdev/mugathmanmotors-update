@@ -1,5 +1,8 @@
+import ProductsHero from "@/components/ProductsHero";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import CTASection from "@/components/CTASection";
+import OperationalUseCasesSection, { UseCase } from "@/components/OperationalUseCasesSection";
+import ProductBrands from "@/components/ProductBrands";
 
 export const metadata = {
   title: "Cars for Sale in Nigeria | Mugathman Motors",
@@ -7,36 +10,69 @@ export const metadata = {
     "Browse our selection of passenger cars for sale in Kano and across Nigeria. Quality vehicles for personal, corporate, and government use.",
 };
 
+const useCases: UseCase[] = [
+  {
+    number: "01",
+    icon: "UserLock",
+    title: "Personal Vehicles",
+    description:
+      "Comfortable and reliable vehicles for everyday driving.",
+  },
+  {
+    number: "02",
+    icon: "Handshake",
+    title: "Corporate Fleets",
+    description:
+      "Professional transportation solutions for businesses and organizations.",
+  },
+  {
+    number: "03",
+    icon: "LandMark",
+    title: "Institutional Use",
+    description:
+      "Dependable vehicles for public sector operations and official assignments.",
+  },
+  {
+    number: "04",
+    icon: "Gem",
+    title: "Executive Transport",
+    description:
+      "Premium vehicle options for executives, management teams, and business travel.",
+  },
+];
+
+const brands = [
+  "/logo-toyota.jpeg",
+  "/logo-honda.jpeg",
+  "/logo-lexus.jpeg",
+];
+
 export default function CarsPage() {
   return (
     <div className="bg-white text-black">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center">
-        <Image
-          src="/car.jpg"
-          alt="Passenger cars for sale in Nigeria"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-center text-white px-5">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Cars</h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Quality vehicles for personal, corporate, and government use
-          </p>
-        </div>
-      </section>
+      <ProductsHero
+        category="Passenger Vehicles"
+        title="Quality Passenger Cars for Every Need"
+        description="Curated selection of sedans, SUVs, and light commercial vehicles. Ideal for corporate fleets, government agencies, and discerning individual buyers seeking reliability and value."
+        backgroundImage="/car.jpg"
+        backgroundImageAlt="Passenger cars for sale in Nigeria"
+        ctaText="View Inventory"
+        ctaHref="/contact?product=cars"
+        minHeight="min-h-[85vh]"
+        parallaxSpeed={0.25}
+      />
 
-      {/* Content */}
-      <section className="max-w-6xl mx-auto px-5 py-16">
-        <div className="text-center">
-          <p className="text-lg text-gray-600">
-            Our car collection is coming soon. Check back for detailed specifications, pricing, and availability.
-          </p>
-        </div>
-      </section>
+      {/* Available Brands */}
+      <ProductBrands brandsImg={brands} />
+      
 
+      {/* Use Cases */}
+      <OperationalUseCasesSection useCases={useCases} />
+
+      {/* CTA Section */}
+      <CTASection />
+
+      {/* Footer section */}
       <Footer />
     </div>
   );

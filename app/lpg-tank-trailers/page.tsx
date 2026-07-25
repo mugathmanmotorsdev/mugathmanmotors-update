@@ -1,5 +1,7 @@
+import ProductsHero from "@/components/ProductsHero";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import OperationalUseCasesSection, { UseCase } from "@/components/OperationalUseCasesSection";
+import CTASection from "@/components/CTASection";
 
 export const metadata = {
   title: "LPG Tank Trailers for Sale in Nigeria | Mugathman Motors",
@@ -7,36 +9,59 @@ export const metadata = {
     "Browse our selection of LPG tank trailers for sale in Kano and across Nigeria. Safe and efficient LPG transportation for energy and industrial operations.",
 };
 
+const useCases: UseCase[] = [
+  {
+    number: "01",
+    icon: "Truck",
+    title: "LPG Distribution",
+    description:
+      "Support safe and efficient transportation between depots, plants, and filling stations.",
+  },
+  {
+    number: "02",
+    icon: "Fuel",
+    title: "Oil & Gas Industry",
+    description:
+      "Reliable transport equipment for petroleum and energy operations.",
+  },
+  {
+    number: "03",
+    icon: "Barrel",
+    title: "Industrial Gas Supply",
+    description:
+      "Move LPG safely to industrial facilities and commercial customers.",
+  },
+  {
+    number: "04",
+    icon: "Building2",
+    title: "Bulk Energy Logistics",
+    description:
+      "Designed for businesses managing high-volume LPG transportation.",
+  },
+];
+
 export default function LpgTankTrailersPage() {
   return (
     <div className="bg-white text-black">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center">
-        <Image
-          src="/lpg-tank.png"
-          alt="LPG tank trailers for energy operations"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-center text-white px-5">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">LPG Tank Trailers</h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Safe and efficient LPG transportation for energy and industrial operations
-          </p>
-        </div>
-      </section>
+      <ProductsHero
+        category="Energy & Industrial Transport"
+        title="LPG Tank Trailers for Safe Energy Transport"
+        description="Specialized tank trailers engineered for safe, efficient LPG transportation. Built to international safety standards for energy and industrial operations."
+        backgroundImage="/lpg-tank.png"
+        backgroundImageAlt="LPG tank trailers for energy operations"
+        ctaText="Request a Quote"
+        ctaHref="/contact?product=lpg-tank-trailers"
+        minHeight="min-h-[85vh]"
+        parallaxSpeed={0.25}
+      />
 
-      {/* Content */}
-      <section className="max-w-6xl mx-auto px-5 py-16">
-        <div className="text-center">
-          <p className="text-lg text-gray-600">
-            Our LPG tank trailer collection is coming soon. Check back for detailed specifications, pricing, and availability.
-          </p>
-        </div>
-      </section>
+      {/* LPG Tank Trailer Operational Use Cases */}
+      <OperationalUseCasesSection useCases={useCases} />
 
+      {/* CTA Section */}
+      <CTASection />
+
+      {/* Footer section */}
       <Footer />
     </div>
   );

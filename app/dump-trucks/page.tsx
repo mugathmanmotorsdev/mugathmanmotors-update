@@ -1,43 +1,68 @@
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import OperationalUseCasesSection from "@/components/OperationalUseCasesSection";
+import ProductsHero from "@/components/ProductsHero";
+import type { UseCase } from "@/components/OperationalUseCasesSection"
+import ProductBrands from "@/components/ProductBrands";
 
-export const metadata = {
-  title: "Dump Trucks for Sale in Nigeria | Mugathman Motors",
-  description:
-    "Browse our selection of heavy-duty dump trucks for sale in Kano and across Nigeria. Built for construction, mining, and material transportation.",
-};
+const useCases: UseCase[] = [
+  {
+    number: "01",
+    icon: "Construction",
+    title: "Construction",
+    description:
+      "Move sand, gravel, concrete, and building materials efficiently.",
+  },
+  {
+    number: "02",
+    icon: "Pickaxe",
+    title: "Mining & Quarrying",
+    description:
+      "Transport aggregates, minerals, and excavation materials across demanding worksites.",
+  },
+  {
+    number: "03",
+    icon: "TowerControl",
+    title: "Infrastructure Projects",
+    description:
+      "Support road construction, earthmoving, and large-scale development projects.",
+  },
+  {
+    number: "04",
+    icon: "Factory",
+    title: "Industrial Operations",
+    description:
+      "Reliable material transportation for manufacturing plants and industrial facilities.",
+  },
+];
 
-export default function DumpTrucksPage() {
+const brands = ["/logo-sinotruk.jpeg", "/logo-shacman.jpeg", "/logo-faw.jpeg"]
+export default function DumpTruckPage() {
   return (
-    <div className="bg-white text-black">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center">
-        <Image
-          src="/dump-truck.jpeg"
-          alt="Dump trucks for sale in Nigeria"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-center text-white px-5">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Dump Trucks</h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Built for construction, mining, and heavy-duty material transportation
-          </p>
-        </div>
-      </section>
+    <>
+      <ProductsHero
+        category="Heavy Duty Trucks"
+        title="Dump Trucks Built for Heavy Duty Operations"
+        description="Engineered for construction, mining, and aggregate transport. Our dump trucks deliver maximum payload capacity, durability, and reliability for your toughest jobs."
+        backgroundImage="/dump-truck.jpeg"
+        backgroundImageAlt="Heavy duty dump truck for construction and mining operations"
+        ctaText="Request a Quote"
+        ctaHref="/contact?product=dump-truck"
+        minHeight="min-h-[85vh]"
+        parallaxSpeed={0.25}
+      />
 
-      {/* Content */}
-      <section className="max-w-6xl mx-auto px-5 py-16">
-        <div className="text-center">
-          <p className="text-lg text-gray-600">
-            Our dump truck collection is coming soon. Check back for detailed specifications, pricing, and availability.
-          </p>
-        </div>
-      </section>
+      {/* Available Brands */}
+      <ProductBrands brandsImg={brands} />
 
+      {/* Dump Truck operational usecases */}
+      <OperationalUseCasesSection useCases={useCases}/>
+
+      {/* CTA Section */}
+      <CTASection />
+
+      {/* Footer section */}
       <Footer />
-    </div>
+    </>
   );
 }

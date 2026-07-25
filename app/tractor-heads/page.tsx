@@ -1,5 +1,8 @@
+import ProductsHero from "@/components/ProductsHero";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import OperationalUseCasesSection, { UseCase } from "@/components/OperationalUseCasesSection";
+import CTASection from "@/components/CTASection";
+import ProductBrands from "@/components/ProductBrands";
 
 export const metadata = {
   title: "Tractor Heads for Sale in Nigeria | Mugathman Motors",
@@ -7,36 +10,68 @@ export const metadata = {
     "Browse our selection of tractor heads for sale in Kano and across Nigeria. Reliable hauling solutions for freight, logistics, and commercial transport.",
 };
 
+const useCases: UseCase[] = [
+  {
+    number: "01",
+    icon: "Truck",
+    title: "Logistics & Haulage",
+    description:
+      "Efficient transportation of goods across regional and national routes.",
+  },
+  {
+    number: "02",
+    icon: "Container",
+    title: "Container Transport",
+    description:
+      "Reliable hauling for ports, freight terminals, and container logistics.",
+  },
+  {
+    number: "03",
+    icon: "Fuel",
+    title: "Oil & Gas Operations",
+    description:
+      "Support heavy transport requirements for energy and industrial sectors.",
+  },
+  {
+    number: "04",
+    icon: "Warehouse",
+    title: "Fleet Expansion",
+    description:
+      "Ideal for businesses growing or modernizing their commercial transport fleets.",
+  },
+];
+
+const brands = [
+  "/logo-sinotruk.jpeg",
+  "/logo-shacman.jpeg",
+  "/logo-faw.jpeg"
+]
+
 export default function TractorHeadsPage() {
   return (
     <div className="bg-white text-black">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[50vh] flex items-center justify-center">
-        <Image
-          src="/tractor-head.png"
-          alt="Tractor heads for heavy logistics"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-center text-white px-5">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Tractor Heads</h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Reliable hauling solutions for freight, logistics, and commercial transport
-          </p>
-        </div>
-      </section>
+      <ProductsHero
+        category="Heavy Duty Transport"
+        title="Tractor Heads for Reliable Heavy Hauling"
+        description="Powerful prime movers engineered for long-haul freight, container transport, and heavy logistics. Proven performance across Africa's toughest routes."
+        backgroundImage="/tractor-head.png"
+        backgroundImageAlt="Tractor heads for heavy logistics"
+        ctaText="Request a Quote"
+        ctaHref="/contact?product=tractor-heads"
+        minHeight="min-h-[85vh]"
+        parallaxSpeed={0.25}
+      />
 
-      {/* Content */}
-      <section className="max-w-6xl mx-auto px-5 py-16">
-        <div className="text-center">
-          <p className="text-lg text-gray-600">
-            Our tractor head collection is coming soon. Check back for detailed specifications, pricing, and availability.
-          </p>
-        </div>
-      </section>
+      {/* Available Brands */}
+      <ProductBrands brandsImg={brands} />
 
+      {/* Tractor Heads operational use cases */}
+      <OperationalUseCasesSection useCases={useCases} />
+
+      {/* CTA Section */}
+      <CTASection />
+
+      {/* Footer section */}
       <Footer />
     </div>
   );

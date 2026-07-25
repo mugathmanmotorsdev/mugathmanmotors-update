@@ -144,3 +144,13 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Pre-hide animated elements before GSAP runs to prevent FOUC blink.
+   GSAP sets opacity:0 in useEffect which causes a flash if CSS doesn't match.
+   These rules ensure elements start hidden in the server-rendered HTML too. */
+.hero-stats .stat-item,
+.product-card,
+.industry-card,
+.cta-section-content {
+  opacity: 0;
+}

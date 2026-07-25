@@ -228,77 +228,17 @@ export function parallaxHero(selector: string, speed: number = 0.3) {
  * Initialize all animations with mobile optimization
  */
 export function initAnimations() {
-  // Check for reduced motion preference
+  // All section animations are now handled by their respective components
+  // (Hero, ProductsSection, IndustriesSection, WhyChooseUs, CTASection)
+  // to avoid duplicate GSAP tweens fighting over the same elements.
+
+  // Check for reduced motion preference and ensure elements are visible
   if (prefersReducedMotion()) {
-    // Show all elements immediately without animation
     gsap.set(".hero-content h1, .hero-content p, .hero-content .cta-button, .hero-stats .stat-item", {
       opacity: 1,
       y: 0,
     });
     gsap.set(".product-card, .industry-card", { opacity: 1, y: 0, scale: 1 });
     gsap.set(".cta-section-content", { opacity: 1, y: 0 });
-    return;
   }
-
-// Hero animations
-  gsap.fromTo(
-    ".hero-content h1",
-    { opacity: 0, y: 30 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      delay: 0.2,
-      ease: "power2.out",
-    }
-  );
-
-  gsap.fromTo(
-    ".hero-content p",
-    { opacity: 0, y: 20 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.5,
-      ease: "power2.out",
-    }
-  );
-
-  gsap.fromTo(
-    ".hero-content .cta-button",
-    { opacity: 0, y: 20 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.8,
-      ease: "power2.out",
-    }
-  );
-
-  gsap.fromTo(
-    ".hero-stats .stat-item",
-    { opacity: 0, y: 20 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      stagger: 0.2,
-      delay: 1,
-      ease: "power2.out",
-    }
-  );
-
-  // Products section
-  staggerReveal(".product-card", { stagger: 0.12 });
-
-  // Industries section
-  staggerReveal(".industry-card", { stagger: 0.15 });
-
-  // Why Choose Us
-  setupWhyChooseUsAnimation();
-
-  // CTA section
-  fadeInOnScroll(".cta-section-content", { y: 30, duration: 1 });
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { prefersReducedMotion } from "@/lib/gsap";
+import SectionLabel from "./SectionLabel";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,10 +72,8 @@ export default function IndustriesSection() {
     >
       <div className="max-w-8xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <span className="inline-block text-sm font-semibold text-[#587FFF] mb-3">
-            Industries We Serve
-          </span>
+        <div className="flex flex-col items-center text-center mb-12">
+          <SectionLabel text="Industries We Serve" />
           <h2 className="text-3xl md:text-5xl font-bold leading-tight max-w-2xl mx-auto">
             Supporting High-Demand Industries
           </h2>

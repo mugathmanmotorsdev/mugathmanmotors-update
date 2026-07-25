@@ -4,10 +4,10 @@ import { FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-16">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="max-w-8xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Contact Section */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-3">
             <h3 className="text-lg font-semibold mb-6">Contact</h3>
             <div className="space-y-3 text-gray-400">
               <p>+234-814-889-6797</p>

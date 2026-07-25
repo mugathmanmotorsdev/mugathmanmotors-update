@@ -97,7 +97,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="hero-stats absolute -bottom-20 md:-bottom-32 right-0 md:right-0 flex gap-6 md:gap-10 bg-white">
+        <div className="hero-stats absolute -bottom-20 md:-bottom-36 right-0 md:right-0 flex gap-6 md:gap-10 bg-white">
           <div className="stat-item text-center p-4" style={{ willChange: "transform, opacity" }}>
             <div className="text-3xl md:text-4xl font-bold text-black ">07+</div>
             <div className="text-sm text-black">Years of Expertise</div>

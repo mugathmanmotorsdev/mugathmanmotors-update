@@ -35,7 +35,11 @@ export default function Header() {
   //Nav links
   const navLinks = [
     { href: "/", label: "Home", TrasparentBg: true },
-    { href: "/inventory", label: "Products", TrasparentBg: false },
+    { href: "/dump-trucks", label: "Dump Truck", TrasparentBg: true },
+    { href: "/cars", label: "Car", TrasparentBg: true },
+    { href: "/tractor-heads", label: "Tractor Head", TrasparentBg: true },
+    { href: "/lpg-tank-trailers", label: "LPG Tank", TrasparentBg: true },
+    { href: "/tractors", label: "Tractor", TrasparentBg: true },
     { href: "/about", label: "About", TrasparentBg: false },
     { href: "/contact", label: "Contact", TrasparentBg: false },
   ];
@@ -50,7 +54,7 @@ export default function Header() {
         "w-full md:w-[98vw] fixed md:top-2 md:left-2 z-50 transition-all duration-300 ease-in-out",
         isScrolled
           ? "bg-white/95 backdrop-blur-sm shadow-sm px-6 md:px-15"
-          : istransparent ? "bg-white md:bg-transparent py-5 px-6 md:px-12" : "bg-white py-5 px-6 md:px-12"
+          : istransparent ? "bg-white md:bg-transparent px-6 md:px-12" : "bg-white px-6 md:px-12"
       )}
       role="banner"
       >
@@ -58,10 +62,15 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 py-5" aria-label="Mugathman Motors - Home">
             <div
-              className="w-8 h-8 bg-[#587FFF] rounded flex items-center justify-center"
+              className="w-8 h-8 flex items-center justify-center"
               aria-hidden="true"
             >
-              <span className="text-white font-bold text-sm">M</span>
+              <Image
+                src="/logo.png"
+                alt="Mugathman Motors Logo"
+                width={32}
+                height={32}
+              />
             </div>
             <span
               className={cn(
@@ -149,8 +158,10 @@ export default function Header() {
                           sizes="(max-width: 768px) 100vw, 240px"
                         />
                       </div>
-                      <h1 className="text-lg font-bold text-gray-800 mt-4 mb-2">Mugathman Motors</h1>
-                      <p className="text-sm text-gray-600 leading-relaxed">Industrial transport solutions for commercial and agricultural markets.</p>
+                      <h1 className="text-lg font-bold text-gray-800 mt-4 mb-2">Little About Mugathman Motors</h1>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        Mugathman Motors is a trusted truck and spare parts dealer based in Kano, Nigeria, offering a wide range of vehicles including trucks, cars, farm tractors, and quality spare parts to meet all logistics, transportation, and agricultural needs.
+                      </p>
                     </div>
                   </div>
                 </div>
