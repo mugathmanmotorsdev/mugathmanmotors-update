@@ -26,7 +26,7 @@ export default function ContactSection() {
 
             {/* Right Column (Contact Form) */}
             <div className="md:col-span-7">
-                <form className="space-y-6 bg-gray-50 p-8 md:p-12 rounded-xl" action="#" method="POST">
+                <form className="space-y-6 bg-gray-50 p-8 md:p-12 rounded-xl" method="POST">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
