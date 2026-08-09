@@ -113,6 +113,64 @@ export default function OperationalUseCasesSection({
       );
     }, section);
 
+    interface CardAnimationState {
+      timeline: GSAPTimeline;        // GSAP timeline for this specific card
+      enterHandler: () => void;     // Event handler for mouseenter
+      leaveHandler: () => void;     // Event handler for mouseleave
+    }
+
+    // Map to store card element → animation state relationships
+    // Using Map instead of polluting the HTMLElement with event handlers
+    const cardStates = new Map<HTMLElement, CardAnimationState>();
+
+    // Function to setup hover animations for a single card with proper validation
+    const setupCardAnimations = (card: HTMLElement): GSAPTimeline | null => {
+      // Safely query animation elements with validation
+      const overlay = card.querySelector(".anim-overlay");
+
+      // Defensive programming: Check if required elements exist
+      if (!overlay) {
+        console.warn("Missing animation elements in IndustriesSection card");
+        return null;
+      }
+
+      // Return a new timeline for card hover animations
+      // Timeline starts paused, animations play on mouseenter, reverse on mouseleave
+      return gsap.timeline({paused: true})
+        .to(overlay, {
+          top: 0,     // Animate overlay to cover entire container (from top-full state)
+          left: 0,    // Animate overlay to cover entire container (from left-full state)
+        })
+    };
+
+    // Select all industry cards for animation setup
+    const cards = document.querySelectorAll(".use-case-card");
+
+    // Setup hover animations for each card with error handling
+    cards.forEach(card => {
+      try {
+        const timeline = setupCardAnimations(card as HTMLElement);
+        if (timeline) {
+          // Create event handlers that reference the specific timeline
+          const enterHandler = () => timeline.restart();
+          const leaveHandler = () => timeline.reverse();
+
+          // Store animation state in type-safe Map (prevents memory leaks)
+          cardStates.set(card as HTMLElement, {
+            timeline,
+            enterHandler,
+            leaveHandler
+          });
+
+          // Attach event listeners for hover effects
+          card.addEventListener("mouseenter", enterHandler);
+          card.addEventListener("mouseleave", leaveHandler);
+        }
+      } catch (error) {
+        console.error("Failed to setup IndustriesSection animation:", error);
+      }
+    });
+
     return () => ctx.revert();
   }, []);
 

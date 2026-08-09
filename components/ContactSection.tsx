@@ -1,6 +1,56 @@
 import SectionLabel from "./SectionLabel";
+import { useState } from "react";
 
 export default function ContactSection() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus("idle");
+        setErrorMessage("");
+
+        try {
+            const formData = new FormData(e.currentTarget);
+
+            const leadData = {
+                full_name: formData.get("name") as string,
+                email: formData.get("email") as string,
+                phone: formData.get("phone") as string,
+                organization: formData.get("company") as string || "",
+                product_of_interest: formData.get("product") as string || "",
+                message: formData.get("message") as string || "",
+            };
+
+            const response = await fetch("/api/leads", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(leadData),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log("Lead created successfully:", data);
+                setSubmitStatus("success");
+                e.currentTarget.reset();
+            } else {
+                const errorData = await response.json();
+                setErrorMessage(errorData.error || "Failed to submit form. Please try again.");
+                setSubmitStatus("error");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setErrorMessage("Network error. Please check your connection and try again.");
+            setSubmitStatus("error");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <section id="enquiry-form" className="grid grid-cols-1 md:grid-cols-12 gap-12 my-12">
             {/* Left Column (Details) */}
@@ -26,7 +76,7 @@ export default function ContactSection() {
 
             {/* Right Column (Contact Form) */}
             <div className="md:col-span-7">
-                <form className="space-y-6 bg-gray-50 p-8 md:p-12 rounded-xl" method="POST">
+                <form className="space-y-6 bg-gray-50 p-8 md:p-12 rounded-xl" method="POST" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -39,6 +89,7 @@ export default function ContactSection() {
                                 required
                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                 placeholder="John Doe"
+                                disabled={isSubmitting}
                             />
                         </div>
                         <div>
@@ -52,6 +103,7 @@ export default function ContactSection() {
                                 required
                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                 placeholder="john@example.com"
+                                disabled={isSubmitting}
                             />
                         </div>
                     </div>
@@ -66,6 +118,7 @@ export default function ContactSection() {
                                 name="phone"
                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                 placeholder="+234 801 234 5678"
+                                disabled={isSubmitting}
                             />
                         </div>
                         <div>
@@ -78,6 +131,7 @@ export default function ContactSection() {
                                 name="company"
                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                 placeholder="Mugathman Motors"
+                                disabled={isSubmitting}
                             />
                         </div>
                     </div>
@@ -89,6 +143,7 @@ export default function ContactSection() {
                             id="product"
                             name="product"
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                            disabled={isSubmitting}
                         >
                             <option value="">Select a product</option>
                             <option value="dump-trucks">Dump Trucks</option>
@@ -111,13 +166,25 @@ export default function ContactSection() {
                             rows={5}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
                             placeholder="Tell us about your requirements, timeline, and any specific questions..."
+                            disabled={isSubmitting}
                         />
                     </div>
+                    {submitStatus === "success" && (
+                        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                            <p className="text-green-800">Your inquiry has been submitted successfully! We&apos;ll get back to you soon.</p>
+                        </div>
+                    )}
+                    {submitStatus === "error" && (
+                        <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                            <p className="text-red-800">Error: {errorMessage}</p>
+                        </div>
+                    )}
                     <button
                         type="submit"
-                        className="w-full md:w-auto px-8 py-4 bg-[#587FFF] text-white font-semibold hover:bg-[#587FFF]/80 transition-colors focus:ring-2 focus:ring-black focus:ring-offset-2"
+                        className="w-full md:w-auto px-8 py-4 bg-[#587FFF] text-white font-semibold hover:bg-[#587FFF]/80 transition-colors focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={isSubmitting}
                     >
-                        Send Inquiry
+                        {isSubmitting ? "Submitting..." : "Send Inquiry"}
                     </button>
                 </form>
             </div>
