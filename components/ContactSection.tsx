@@ -1,5 +1,8 @@
+"use client";
+
 import SectionLabel from "./SectionLabel";
 import { useState } from "react";
+import { Inquiry } from "@/lib/actions/inquiry";
 
 export default function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -12,34 +15,59 @@ export default function ContactSection() {
         setSubmitStatus("idle");
         setErrorMessage("");
 
+        const formData = new FormData(e.currentTarget);
+
+        // Client-side validation
+        const name = formData.get("name") as string;
+        const email = formData.get("email") as string;
+        const phone = formData.get("phone") as string;
+        const product = formData.get("product") as string;
+        const message = formData.get("message") as string;
+
+        if (!name || name.length < 3) {
+            setErrorMessage("Name must be at least 3 characters long");
+            setSubmitStatus("error");
+            setIsSubmitting(false);
+            return;
+        }
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setErrorMessage("Invalid email address");
+            setSubmitStatus("error");
+            setIsSubmitting(false);
+            return;
+        }
+
+        if (!phone || phone.trim() === "") {
+            setErrorMessage("Phone number is required");
+            setSubmitStatus("error");
+            setIsSubmitting(false);
+            return;
+        }
+
+        if (!product || product.trim() === "") {
+            setErrorMessage("Product is required");
+            setSubmitStatus("error");
+            setIsSubmitting(false);
+            return;
+        }
+
+        if (!message || message.length < 10) {
+            setErrorMessage("Message must be at least 10 characters long");
+            setSubmitStatus("error");
+            setIsSubmitting(false);
+            return;
+        }
+
         try {
-            const formData = new FormData(e.currentTarget);
+            const result = await Inquiry(formData);
 
-            const leadData = {
-                full_name: formData.get("name") as string,
-                email: formData.get("email") as string,
-                phone: formData.get("phone") as string,
-                organization: formData.get("company") as string || "",
-                product_of_interest: formData.get("product") as string || "",
-                message: formData.get("message") as string || "",
-            };
-
-            const response = await fetch("/api/leads", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(leadData),
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                console.log("Lead created successfully:", data);
+            if (result.success) {
+                console.log("Lead created successfully:", result.lead_id);
                 setSubmitStatus("success");
                 e.currentTarget.reset();
             } else {
-                const errorData = await response.json();
-                setErrorMessage(errorData.error || "Failed to submit form. Please try again.");
+                setErrorMessage(result.error || "Failed to submit form. Please try again.");
                 setSubmitStatus("error");
             }
         } catch (error) {
