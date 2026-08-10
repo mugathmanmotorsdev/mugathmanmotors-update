@@ -30,31 +30,31 @@ export default function OperationalUseCaseCard({
         "transition-all duration-300 hover:-translate-y-1",
         className
       )}
-      style={{ willChange: "transform, opacity, box-shadow, border-color" }}
+      // style={{ willChange: "transform, opacity, box-shadow, border-color" }}
     >
       {/* Ovalay animation */}
       <div className="anim-overlay absolute top-full left-full inset-0 bg-[#587FFF] to-transparent z-[-1]" />
 
       {/* Number Badge - Top */}
       <div className="w-full">
-        <span className="inline-flex items-center justify-center transform duration-700 group-hover:text-white w-8 h-8 text-2xl font-bold">
+        <span className="inline-flex items-center justify-center transform duration-300 group-hover:text-white w-8 h-8 text-2xl font-bold">
           {number}
         </span>
       </div>
 
-      <div className="relative mb-6 group-hover:scale-110 transition-transform transform duration-700 group-hover:text-white">
+      <div className="relative mb-6 group-hover:scale-110 transition-all transform duration-300 group-hover:text-white">
         <Icon size={200} strokeWidth={.5} aria-hidden="true" />
       </div>
 
       {/* Icon - Center */}
       <div className="w-full">
         {/* Title */}
-        <h3 className="text-xl md:text-2xl font-bold transition duration-700 text-black group-hover:text-white mb-3 leading-tight">
+        <h3 className="text-xl md:text-2xl font-bold transition duration-300 text-black group-hover:text-white mb-3 leading-tight">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 transform duration-700 group-hover:text-white text-sm md:text-base leading-relaxed">
+        <p className="text-gray-600 transform duration-300 group-hover:text-white text-sm md:text-base leading-relaxed">
           {description}
         </p>
       </div>

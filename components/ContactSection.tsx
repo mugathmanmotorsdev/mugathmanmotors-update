@@ -1,13 +1,15 @@
 "use client";
 
 import SectionLabel from "./SectionLabel";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Inquiry } from "@/lib/actions/inquiry";
 
 export default function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
     const [errorMessage, setErrorMessage] = useState("");
+
+    const formRef = useRef<HTMLFormElement>(null)
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -61,11 +63,12 @@ export default function ContactSection() {
 
         try {
             const result = await Inquiry(formData);
+            console.log("LEAD RESULT: ", result)
 
             if (result.success) {
                 console.log("Lead created successfully:", result.lead_id);
                 setSubmitStatus("success");
-                e.currentTarget.reset();
+                formRef.current?.reset();
             } else {
                 setErrorMessage(result.error || "Failed to submit form. Please try again.");
                 setSubmitStatus("error");
@@ -104,7 +107,11 @@ export default function ContactSection() {
 
             {/* Right Column (Contact Form) */}
             <div className="md:col-span-7">
-                <form className="space-y-6 bg-gray-50 p-8 md:p-12 rounded-xl" method="POST" onSubmit={handleSubmit}>
+                <form
+                ref={formRef}
+                className="space-y-6 bg-gray-50 p-8 md:p-12 rounded-xl" 
+                method="POST" 
+                onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">

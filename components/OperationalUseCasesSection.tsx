@@ -95,7 +95,7 @@ export default function OperationalUseCasesSection({
       // Staggered card reveal
       gsap.fromTo(
         ".use-case-card",
-        { opacity: 0, y: 40, scale: 0.95 },
+        { opacity: 0, y: 50, scale: 0.95 },
         {
           opacity: 1,
           y: 0,
