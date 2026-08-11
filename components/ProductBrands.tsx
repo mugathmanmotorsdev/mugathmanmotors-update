@@ -49,7 +49,7 @@ export default function ProductBrands({brandsImg}: {brandsImg: string[]}) {
             <div className="grid grid-cols-2 md:grid-cols-3 justify-center gap-4 mt-20">
                 {brandsImg.map((img, index) => (
                     <div key={index} className="brand-card border p-4 text-center hover:border-blue-600 transition-colors">
-                        <Image src={img} alt="" className="max-h-16 object-contain mx-auto" width={150} height={80} />
+                        <Image src={img} alt={`Brand logo ${index + 1}`} className="max-h-16 object-contain mx-auto" width={150} height={80} sizes="(max-width: 768px) 50vw, 200px" loading="lazy" />
                     </div>
                 ))}
             </div>

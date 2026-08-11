@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,30 +15,35 @@ const products = [
     alt: "Dump truck for sale in Kano Nigeria",
     title: "Dump Truck",
     description: "Built for construction, mining, and heavy-duty material transportation.",
+    href: "/dump-trucks",
   },
   {
     image: "/tractor-head.png",
     alt: "Tractor head for heavy logistics",
     title: "Tractor Head",
     description: "Reliable hauling solutions for freight, logistics, and commercial transport.",
+    href: "/tractor-heads",
   },
   {
     image: "/lpg-tank.png",
     alt: "LPG tank trailer for energy operations",
     title: "LPG Tank Trailer",
     description: "Safe and efficient LPG transportation for energy and industrial operations.",
+    href: "/lpg-tank-trailers",
   },
   {
     image: "/tractor-2.png",
     alt: "Farm tractor for agriculture",
     title: "Tractor",
     description: "Reliable farming equipment for cultivation, planting, and harvesting.",
+    href: "/tractors",
   },
   {
     image: "/car.jpg",
     alt: "Passenger car for sale in Nigeria",
     title: "Car",
     description: "Quality passenger vehicles for personal, corporate, and government use.",
+    href: "/cars",
   },
 ];
 
@@ -93,9 +99,10 @@ export default function ProductsSection() {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {products.map((product, index) => (
-            <div
+            <Link
               key={index}
-              className="product-card group relative overflow-hidden h-[280px] md:h-[620px] cursor-pointer"
+              href={product.href}
+              className="product-card group relative overflow-hidden h-[280px] md:h-[620px] block"
               style={{ willChange: "transform, opacity" }}
             >
               {/* Image */}
@@ -104,6 +111,8 @@ export default function ProductsSection() {
                 alt={product.alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
               />
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -116,7 +125,7 @@ export default function ProductsSection() {
                   {product.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

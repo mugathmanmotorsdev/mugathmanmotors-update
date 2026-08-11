@@ -46,9 +46,11 @@ export default function CTASection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/dump-truck-hero.png"
-          alt="Commercial vehicle solutions"
+          alt="Heavy-duty dump truck for commercial vehicle solutions"
           fill
           className="object-cover"
+          sizes="100vw"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black  to-black/20" />
       </div>

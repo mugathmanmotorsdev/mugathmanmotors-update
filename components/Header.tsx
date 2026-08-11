@@ -70,6 +70,7 @@ export default function Header() {
                 alt="Mugathman Motors Logo"
                 width={32}
                 height={32}
+                sizes="32px"
               />
             </div>
             <span
@@ -138,6 +139,7 @@ export default function Header() {
                             fill
                             className="object-cover transition-transform duration-300 group-hover/card:scale-110"
                             sizes="(max-width: 768px) 100vw, 240px"
+                            loading="lazy"
                           />
                         </div>
                         <span className="text-sm font-medium text-gray-700 text-center group-hover/card:text-[#587FFF] transition-colors">
@@ -155,6 +157,7 @@ export default function Header() {
                           fill
                           className="object-cover transition-transform duration-300 group-hover/card:scale-110"
                           sizes="(max-width: 768px) 100vw, 240px"
+                          loading="lazy"
                         />
                       </div>
                       <h1 className="text-lg font-bold text-gray-800 mt-4 mb-2">Little About Mugathman Motors</h1>

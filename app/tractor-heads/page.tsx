@@ -2,13 +2,35 @@ import ProductsHero from "@/components/ProductsHero";
 import Footer from "@/components/Footer";
 import OperationalUseCasesSection, { UseCase } from "@/components/OperationalUseCasesSection";
 import CTASection from "@/components/CTASection";
+import RelatedProducts from "@/components/RelatedProducts";
 import ProductBrands from "@/components/ProductBrands";
+import JsonLd from "@/components/JsonLd";
+import { serviceSchema, itemListSchema, PRODUCT_SERVICES } from "@/lib/seo/schemas";
 
 export const metadata = {
-  title: "Tractor Heads for Sale in Nigeria | Mugathman Motors",
+  title: "Tractor Heads for Sale in Nigeria | Prime Movers for Heavy Haulage",
   description:
-    "Browse our selection of tractor heads for sale in Kano and across Nigeria. Reliable hauling solutions for freight, logistics, and commercial transport.",
+    "Browse our selection of tractor heads for sale in Kano and across Nigeria. Sinotruk (HOWO), Shacman, and FAW prime movers for freight, logistics, and container transport. Proven performance across Africa's toughest routes.",
+  alternates: {
+    canonical: "https://mugathmanmotors.com/tractor-heads",
+  },
 };
+
+const tractorHeadService = PRODUCT_SERVICES["tractor-heads"];
+const tractorHeadBrands = [
+  { position: 1, name: "Sinotruk (HOWO)", description: "Heavy-duty prime movers for long-haul transport" },
+  { position: 2, name: "Shacman", description: "Reliable tractor heads for container logistics" },
+  { position: 3, name: "FAW", description: "Cost-effective heavy-duty tractor units" },
+];
+
+const serviceStructuredData = serviceSchema({
+  ...tractorHeadService,
+  provider: { name: "Mugathman Motors", url: "https://mugathmanmotors.com" },
+  areaServed: "NG",
+  offers: { availability: "https://schema.org/InStock", priceRange: "₦40,000,000 - ₦120,000,000", currency: "NGN" },
+});
+
+const brandListStructuredData = itemListSchema({ itemListElement: tractorHeadBrands });
 
 const useCases: UseCase[] = [
   {
@@ -50,6 +72,10 @@ const brands = [
 export default function TractorHeadsPage() {
   return (
     <div className="bg-white text-black">
+      {/* Structured Data */}
+      <JsonLd data={serviceStructuredData} />
+      <JsonLd data={brandListStructuredData} />
+
       <ProductsHero
         category="Heavy Duty Transport"
         title="Tractor Heads for Reliable Heavy Hauling"
@@ -67,6 +93,9 @@ export default function TractorHeadsPage() {
 
       {/* Tractor Heads operational use cases */}
       <OperationalUseCasesSection useCases={useCases} />
+
+      {/* Related Products */}
+      <RelatedProducts currentSlug="tractor-heads" />
 
       {/* CTA Section */}
       <CTASection />

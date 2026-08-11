@@ -178,6 +178,8 @@ export default function IndustriesSection() {
                   alt={industry.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />

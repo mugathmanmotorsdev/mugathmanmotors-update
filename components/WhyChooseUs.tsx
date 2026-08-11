@@ -108,6 +108,8 @@ export default function WhyChooseUs() {
                 fill
                 className="object-cover"
                 priority={false}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
               />
             </div>
           </div>

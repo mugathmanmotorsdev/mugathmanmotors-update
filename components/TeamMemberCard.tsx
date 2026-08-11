@@ -16,6 +16,7 @@ export default function TeamMemberCard({ name, role, image }: TeamMemberCardProp
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          loading="lazy"
         />
       </div>
       <h3 className="text-lg font-semibold text-black mb-1">{name}</h3>

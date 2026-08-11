@@ -46,23 +46,28 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Products</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <Link href="/inventory" className="hover:text-[#587FFF] transition-colors">
+                <Link href="/dump-trucks" className="hover:text-[#587FFF] transition-colors">
                   Dump Truck
                 </Link>
               </li>
               <li>
-                <Link href="/inventory" className="hover:text-[#587FFF] transition-colors">
+                <Link href="/tractor-heads" className="hover:text-[#587FFF] transition-colors">
                   Tractor Head
                 </Link>
               </li>
               <li>
-                <Link href="/inventory" className="hover:text-[#587FFF] transition-colors">
-                  Trailer
+                <Link href="/lpg-tank-trailers" className="hover:text-[#587FFF] transition-colors">
+                  LPG Tank Trailer
                 </Link>
               </li>
               <li>
-                <Link href="/inventory" className="hover:text-[#587FFF] transition-colors">
+                <Link href="/tractors" className="hover:text-[#587FFF] transition-colors">
                   Tractor
+                </Link>
+              </li>
+              <li>
+                <Link href="/cars" className="hover:text-[#587FFF] transition-colors">
+                  Car
                 </Link>
               </li>
             </ul>

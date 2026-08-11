@@ -11,6 +11,7 @@ export default function Ceo() {
                   height={520}
                   className="object-cover w-full h-full shadow-xl"
                   priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
             </div>
             <div className="space-y-6 flex flex-col">

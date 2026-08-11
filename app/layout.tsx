@@ -1,8 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import JsonLd from "@/components/JsonLd";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
 import StikyWhatsAppButton from "@/components/StikyWhatsappButton";
+import { webSiteSchema, localBusinessSchema, MUGATHMAN_WEBSITE_DATA, MUGATHMAN_LOCAL_BUSINESS_DATA } from "@/lib/seo/schemas";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +48,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Global Structured Data */}
+        <JsonLd data={webSiteSchema(MUGATHMAN_WEBSITE_DATA)} />
+        <JsonLd data={localBusinessSchema(MUGATHMAN_LOCAL_BUSINESS_DATA)} />
         <Header />
         <StikyWhatsAppButton />
         {children}

@@ -5,15 +5,17 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import AnimationInit from "@/components/AnimationInit";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema, MUGATHMAN_ORG_DATA } from "@/lib/seo/schemas";
 
 export const metadata = {
-  title: "Mugathman Motors – Truck Dealer & Spare Parts in Kano, Nigeria",
+  title: "Mugathman Motors – Commercial Vehicle Supplier & Fleet Solutions Nigeria",
   description:
-    "Mugathman Motors is a trusted truck dealer and spare parts supplier in Kano, Nigeria. We sell quality trucks, trailers, cars, farm tractors, and genuine parts to power your logistics and transport business.",
+    "Mugathman Motors is a trusted commercial vehicle supplier in kano Nigeria. We offer heavy-duty trucks, tractor heads, LPG tank trailers, farm tractors, and passenger cars for logistics, construction, agriculture, and energy sectors. Nationwide delivery and genuine parts support.",
   openGraph: {
-    title: "Mugathman Motors – Truck Dealer & Spare Parts in Kano, Nigeria",
+    title: "Mugathman Motors – Commercial Vehicle Supplier & Fleet Solutions Nigeria",
     description:
-      "Mugathman Motors is a trusted truck dealer and spare parts supplier in Kano, Nigeria. We sell quality trucks, trailers, cars, farm tractors, and genuine parts to power your logistics and transport business.",
+      "Mugathman Motors is a trusted commercial vehicle supplier in Nigeria. We offer heavy-duty trucks, tractor heads, LPG tank trailers, farm tractors, and passenger cars for logistics, construction, agriculture, and energy sectors. Nationwide delivery and genuine parts support.",
     url: "https://mugathmanmotors.com/",
     siteName: "Mugathman Motors",
     images: [
@@ -26,42 +28,16 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
-};
-
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Mugathman Motors",
-  url: "https://mugathmanmotors.com",
-  logo: "https://mugathmanmotors.com/logo.png",
-  description: "Trusted truck dealer and spare parts supplier in Kano, Nigeria",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Danladi Nasidi Housing Estate, Marri Kumbotso LGA",
-    addressLocality: "Kano",
-    addressCountry: "NG",
+  alternates: {
+    canonical: "https://mugathmanmotors.com/",
   },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+234-814-889-6797",
-    contactType: "customer service",
-    email: "info@mugathmanmotors.com",
-  },
-  sameAs: [
-    "https://www.tiktok.com/@mugathman_motors",
-    "https://youtube.com/@mugathmanmotors",
-    "https://web.facebook.com/profile.php?id=61583124653834",
-  ],
 };
 
 export default function Home() {
   return (
     <div className="bg-white text-black">
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      {/* Structured Data - Enhanced Organization Schema */}
+      <JsonLd data={organizationSchema(MUGATHMAN_ORG_DATA)} />
 
       {/* GSAP Animation Init */}
       <AnimationInit />

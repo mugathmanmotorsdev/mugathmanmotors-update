@@ -81,10 +81,10 @@ export default function AboutHero({
       aria-label={`${sectionLabel} section`}
     >
       {/* Top Image - Half Screen Height */}
-      <div>
-        <h1 className="text-7xl font-bold">About Us</h1>
+      <div className="max-w-6xl">
+        <h1 className="text-7xl font-bold">{title}</h1>
       </div>
-      <div className="relative h-[50vh] min-h-[300px] max-h-[500px] max-w-8xl">
+      <div className="relative h-[90vh] min-h-[300px] max-w-8xl">
         <Image
           src={image}
           alt={imageAlt}

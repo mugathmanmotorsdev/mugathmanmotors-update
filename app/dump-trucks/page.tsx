@@ -2,8 +2,36 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import OperationalUseCasesSection from "@/components/OperationalUseCasesSection";
 import ProductsHero from "@/components/ProductsHero";
+import RelatedProducts from "@/components/RelatedProducts";
 import type { UseCase } from "@/components/OperationalUseCasesSection"
 import ProductBrands from "@/components/ProductBrands";
+import JsonLd from "@/components/JsonLd";
+import { serviceSchema, itemListSchema, PRODUCT_SERVICES } from "@/lib/seo/schemas";
+
+export const metadata = {
+  title: "Dump Trucks for Sale in Nigeria | Heavy-Duty Construction & Mining Trucks",
+  description:
+    "Browse our selection of heavy-duty dump trucks for construction, mining, and aggregate transport in Nigeria. Sinotruk (HOWO), Shacman, and FAW trucks with nationwide delivery. Built for maximum payload and durability.",
+  alternates: {
+    canonical: "https://mugathmanmotors.com/dump-trucks",
+  },
+};
+
+const dumpTruckService = PRODUCT_SERVICES["dump-trucks"];
+const dumpTruckBrands = [
+  { position: 1, name: "Sinotruk (HOWO)", description: "Heavy-duty dump trucks and tractor heads" },
+  { position: 2, name: "Shacman", description: "Construction and mining dump trucks" },
+  { position: 3, name: "FAW", description: "Reliable commercial vehicles for African markets" },
+];
+
+const serviceStructuredData = serviceSchema({
+  ...dumpTruckService,
+  provider: { name: "Mugathman Motors", url: "https://mugathmanmotors.com" },
+  areaServed: "NG",
+  offers: { availability: "https://schema.org/InStock", priceRange: "₦50,000,000 - ₦150,000,000", currency: "NGN" },
+});
+
+const brandListStructuredData = itemListSchema({ itemListElement: dumpTruckBrands });
 
 const useCases: UseCase[] = [
   {
@@ -40,6 +68,10 @@ const brands = ["/logo-sinotruk.jpeg", "/logo-shacman.jpeg", "/logo-faw.jpeg"]
 export default function DumpTruckPage() {
   return (
     <>
+      {/* Structured Data */}
+      <JsonLd data={serviceStructuredData} />
+      <JsonLd data={brandListStructuredData} />
+
       <ProductsHero
         category="Heavy Duty Trucks"
         title="Dump Trucks Built for Heavy Duty Operations"
@@ -57,6 +89,9 @@ export default function DumpTruckPage() {
 
       {/* Dump Truck operational usecases */}
       <OperationalUseCasesSection useCases={useCases}/>
+
+      {/* Related Products */}
+      <RelatedProducts currentSlug="dump-trucks" />
 
       {/* CTA Section */}
       <CTASection />
