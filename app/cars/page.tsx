@@ -5,6 +5,7 @@ import OperationalUseCasesSection, { UseCase } from "@/components/OperationalUse
 import RelatedProducts from "@/components/RelatedProducts";
 import ProductBrands from "@/components/ProductBrands";
 import JsonLd from "@/components/JsonLd";
+import ViewContentTracker from "@/components/analytics/ViewContentTracker";
 import { serviceSchema, itemListSchema, PRODUCT_SERVICES } from "@/lib/seo/schemas";
 
 export const metadata = {
@@ -72,6 +73,7 @@ const brands = [
 export default function CarsPage() {
   return (
     <div className="bg-white text-black">
+      <ViewContentTracker slug="cars" name={carService.name} />
       {/* Structured Data */}
       <JsonLd data={serviceStructuredData} />
       <JsonLd data={brandListStructuredData} />

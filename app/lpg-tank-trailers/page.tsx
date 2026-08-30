@@ -4,6 +4,7 @@ import OperationalUseCasesSection, { UseCase } from "@/components/OperationalUse
 import CTASection from "@/components/CTASection";
 import RelatedProducts from "@/components/RelatedProducts";
 import JsonLd from "@/components/JsonLd";
+import ViewContentTracker from "@/components/analytics/ViewContentTracker";
 import { serviceSchema, itemListSchema, PRODUCT_SERVICES } from "@/lib/seo/schemas";
 
 export const metadata = {
@@ -63,6 +64,7 @@ const useCases: UseCase[] = [
 export default function LpgTankTrailersPage() {
   return (
     <div className="bg-white text-black">
+      <ViewContentTracker slug="lpg-tank-trailers" name={lpgService.name} />
       {/* Structured Data */}
       <JsonLd data={serviceStructuredData} />
       <JsonLd data={brandListStructuredData} />

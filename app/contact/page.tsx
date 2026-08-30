@@ -5,6 +5,8 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import { faqSchema } from "@/lib/seo/schemas";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Contact Mugathman Motors | Get a Quote for Trucks, Tractors & Trailers",
   description:

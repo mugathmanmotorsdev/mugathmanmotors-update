@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import RelatedProducts from "@/components/RelatedProducts";
 import { Factory, Fuel, Truck, Warehouse } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
+import ViewContentTracker from "@/components/analytics/ViewContentTracker";
 import { serviceSchema, itemListSchema, PRODUCT_SERVICES } from "@/lib/seo/schemas";
 
 export const metadata = {
@@ -66,6 +67,7 @@ const useCases: UseCase[] = [
 export default function TractorsPage() {
   return (
     <div className="bg-white text-black">
+      <ViewContentTracker slug="tractors" name={tractorService.name} />
       {/* Structured Data */}
       <JsonLd data={serviceStructuredData} />
       <JsonLd data={brandListStructuredData} />

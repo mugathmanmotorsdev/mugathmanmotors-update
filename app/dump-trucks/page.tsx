@@ -6,6 +6,7 @@ import RelatedProducts from "@/components/RelatedProducts";
 import type { UseCase } from "@/components/OperationalUseCasesSection"
 import ProductBrands from "@/components/ProductBrands";
 import JsonLd from "@/components/JsonLd";
+import ViewContentTracker from "@/components/analytics/ViewContentTracker";
 import { serviceSchema, itemListSchema, PRODUCT_SERVICES } from "@/lib/seo/schemas";
 
 export const metadata = {
@@ -68,6 +69,7 @@ const brands = ["/logo-sinotruk.jpeg", "/logo-shacman.jpeg", "/logo-faw.jpeg"]
 export default function DumpTruckPage() {
   return (
     <>
+      <ViewContentTracker slug="dump-trucks" name={dumpTruckService.name} />
       {/* Structured Data */}
       <JsonLd data={serviceStructuredData} />
       <JsonLd data={brandListStructuredData} />
@@ -79,7 +81,7 @@ export default function DumpTruckPage() {
         backgroundImage="/dump-truck.jpeg"
         backgroundImageAlt="Heavy duty dump truck for construction and mining operations"
         ctaText="Request a Quote"
-        ctaHref="/contact?product=dump-truck"
+        ctaHref="/contact?product=dump-trucks"
         minHeight="min-h-[85vh]"
         parallaxSpeed={0.25}
       />

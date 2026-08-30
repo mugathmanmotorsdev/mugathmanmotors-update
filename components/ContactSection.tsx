@@ -2,14 +2,19 @@
 
 import SectionLabel from "./SectionLabel";
 import { useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Inquiry } from "@/lib/actions/inquiry";
+import { trackLead } from "@/lib/analytics/meta";
 
 export default function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
     const [errorMessage, setErrorMessage] = useState("");
+    const searchParams = useSearchParams();
 
     const formRef = useRef<HTMLFormElement>(null)
+
+    const productParam = searchParams.get("product") || "";
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -67,6 +72,7 @@ export default function ContactSection() {
 
             if (result.success) {
                 console.log("Lead created successfully:", result.lead_id);
+                trackLead();
                 setSubmitStatus("success");
                 formRef.current?.reset();
             } else {
@@ -177,6 +183,7 @@ export default function ContactSection() {
                         <select
                             id="product"
                             name="product"
+                            defaultValue={productParam}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                             disabled={isSubmitting}
                         >

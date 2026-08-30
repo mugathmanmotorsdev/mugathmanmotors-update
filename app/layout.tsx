@@ -2,8 +2,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import StikyWhatsAppButton from "@/components/StikyWhatsappButton";
+import MetaPixel from "@/components/analytics/MetaPixel";
+import PageViewTracker from "@/components/analytics/PageViewTracker";
 import { webSiteSchema, localBusinessSchema, MUGATHMAN_WEBSITE_DATA, MUGATHMAN_LOCAL_BUSINESS_DATA } from "@/lib/seo/schemas";
 
 const geistSans = Geist({
@@ -48,6 +50,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <MetaPixel />
+        <PageViewTracker />
         {/* Global Structured Data */}
         <JsonLd data={webSiteSchema(MUGATHMAN_WEBSITE_DATA)} />
         <JsonLd data={localBusinessSchema(MUGATHMAN_LOCAL_BUSINESS_DATA)} />
