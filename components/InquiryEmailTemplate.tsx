@@ -1,4 +1,4 @@
-export default function InquiryEmailTemplate( name: string, email: string, message: string, company?: string, product?: string ) {
+export default function InquiryEmailTemplate( name: string, message: string, product?: string ) {
     
     return (`
         <div style="font-family: Arial, sans-serif; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(21,1,80,0.08); max-width: 480px; margin: 0 auto; border: 1px solid #eee;">
@@ -6,19 +6,9 @@ export default function InquiryEmailTemplate( name: string, email: string, messa
             <h2 style="margin: 0; color: #150150; font-size: 22px; font-weight: 700;">New Inquiry Received</h2>
             </div>
             <div style="padding: 24px 32px;">
-            ${company ? `
-            <div style="margin-bottom: 16px;">
-                <span style="color: #150150; font-weight: 600;">Company:</span>
-                <span style="margin-left: 8px;">${company}</span>
-            </div>
-            ` : ''}
             <div style="margin-bottom: 16px;">
                 <span style="color: #150150; font-weight: 600;">Name:</span>
                 <span style="margin-left: 8px;">${name}</span>
-            </div>
-            <div style="margin-bottom: 16px;">
-                <span style="color: #150150; font-weight: 600;">Email:</span>
-                <span style="margin-left: 8px;">${email}</span>
             </div>
             ${product ? `
             <div style="margin-bottom: 16px;">

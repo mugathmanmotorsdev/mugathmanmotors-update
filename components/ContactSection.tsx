@@ -26,20 +26,12 @@ export default function ContactSection() {
 
         // Client-side validation
         const name = formData.get("name") as string;
-        const email = formData.get("email") as string;
         const phone = formData.get("phone") as string;
         const product = formData.get("product") as string;
         const message = formData.get("message") as string;
 
         if (!name || name.length < 3) {
             setErrorMessage("Name must be at least 3 characters long");
-            setSubmitStatus("error");
-            setIsSubmitting(false);
-            return;
-        }
-
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            setErrorMessage("Invalid email address");
             setSubmitStatus("error");
             setIsSubmitting(false);
             return;
@@ -115,7 +107,7 @@ export default function ContactSection() {
             <div className="md:col-span-7">
                 <form
                 ref={formRef}
-                className="space-y-6 bg-gray-50 p-8 md:p-12 rounded-xl" 
+                className="space-y-6 bg-white p-8 md:p-12" 
                 method="POST" 
                 onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -128,50 +120,21 @@ export default function ContactSection() {
                                 id="name"
                                 name="name"
                                 required
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-gray-300 focus:border-transparent transition-colors"
                                 placeholder="John Doe"
                                 disabled={isSubmitting}
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                                Email Address <span className="text-red-500">*</span>
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                                placeholder="john@example.com"
-                                disabled={isSubmitting}
-                            />
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
                             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                                Phone Number
+                                WhatsApp Phone Number
                             </label>
                             <input
                                 type="tel"
                                 id="phone"
                                 name="phone"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-gray-300 focus:border-transparent transition-colors"
                                 placeholder="+234 801 234 5678"
-                                disabled={isSubmitting}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                                Company / Organization
-                            </label>
-                            <input
-                                type="text"
-                                id="company"
-                                name="company"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                                placeholder="Mugathman Motors"
                                 disabled={isSubmitting}
                             />
                         </div>
@@ -184,7 +147,7 @@ export default function ContactSection() {
                             id="product"
                             name="product"
                             defaultValue={productParam}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                            className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-gray-300 focus:border-transparent transition-colors"
                             disabled={isSubmitting}
                         >
                             <option value="">Select a product</option>
@@ -206,7 +169,7 @@ export default function ContactSection() {
                             name="message"
                             required
                             rows={5}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                            className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-gray-300 focus:border-transparent transition-colors resize-none"
                             placeholder="Tell us about your requirements, timeline, and any specific questions..."
                             disabled={isSubmitting}
                         />

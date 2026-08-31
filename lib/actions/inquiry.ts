@@ -9,9 +9,7 @@ const leadApiUrl = process.env.LEAD_API_URL || process.env.API_URL || process.en
 
 export async function Inquiry(formData: FormData) {
     // get data from form
-    const email = formData.get("email") as string;
     const name = formData.get("name") as string;
-    const company = formData.get("company") as string || undefined;
     const product = formData.get("product") as string;
     const message = formData.get("message") as string;
 
@@ -24,9 +22,7 @@ export async function Inquiry(formData: FormData) {
             },
             body: JSON.stringify({
                 full_name: name,
-                email,
                 phone: formData.get("phone") as string,
-                organization: company,
                 product_of_interest: product,
                 message,
             }),
@@ -50,7 +46,7 @@ export async function Inquiry(formData: FormData) {
                 from: "Mugathman <enquiry@mugathmanmotors.com>",
                 to: "info@mugathmanmotors.com",
                 subject: "Inquiry from " + name,
-                html: InquiryEmailTemplate(name, email, message, company, product),
+                html: InquiryEmailTemplate(name, message, product),
             });
 
             if (inquiry.error) {
