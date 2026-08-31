@@ -7,7 +7,7 @@ const api_key = process.env.RESEND_API_KEY;
 // Use LEAD_API_URL for external Lead API, fallback to BASE_URL for backward compatibility
 const leadApiUrl = process.env.LEAD_API_URL || process.env.API_URL || process.env.BASE_URL;
 
-export async function Inquiry(formData: FormData) {
+export async function Inquiry(formData: FormData, source?: string | null) {
     // get data from form
     const name = formData.get("name") as string;
     const product = formData.get("product") as string;
@@ -25,6 +25,7 @@ export async function Inquiry(formData: FormData) {
                 phone: formData.get("phone") as string,
                 product_of_interest: product,
                 message,
+                source,
             }),
         });
 

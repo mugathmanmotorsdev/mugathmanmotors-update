@@ -6,6 +6,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import StikyWhatsAppButton from "@/components/StikyWhatsappButton";
 import MetaPixel from "@/components/analytics/MetaPixel";
 import PageViewTracker from "@/components/analytics/PageViewTracker";
+import SourceTracker from "@/components/analytics/SourceTracker";
 import { webSiteSchema, localBusinessSchema, MUGATHMAN_WEBSITE_DATA, MUGATHMAN_LOCAL_BUSINESS_DATA } from "@/lib/seo/schemas";
 
 const geistSans = Geist({
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
       >
         <MetaPixel />
         <PageViewTracker />
+        <SourceTracker />
         {/* Global Structured Data */}
         <JsonLd data={webSiteSchema(MUGATHMAN_WEBSITE_DATA)} />
         <JsonLd data={localBusinessSchema(MUGATHMAN_LOCAL_BUSINESS_DATA)} />

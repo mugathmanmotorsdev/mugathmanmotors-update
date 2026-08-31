@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Inquiry } from "@/lib/actions/inquiry";
 import { trackLead } from "@/lib/analytics/meta";
+import { getSource } from "@/lib/analytics/source";
 
 export default function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,15 +59,16 @@ export default function ContactSection() {
             return;
         }
 
-        try {
-            const result = await Inquiry(formData);
-            console.log("LEAD RESULT: ", result)
+try {
+             const source = getSource();
+             const result = await Inquiry(formData, source);
+             console.log("LEAD RESULT: ", result)
 
-            if (result.success) {
-                console.log("Lead created successfully:", result.lead_id);
-                trackLead();
-                setSubmitStatus("success");
-                formRef.current?.reset();
+             if (result.success) {
+                 console.log("Lead created successfully:", result.lead_id);
+                 trackLead(source || undefined);
+                 setSubmitStatus("success");
+                 formRef.current?.reset();
             } else {
                 setErrorMessage(result.error || "Failed to submit form. Please try again.");
                 setSubmitStatus("error");

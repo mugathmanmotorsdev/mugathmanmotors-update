@@ -28,8 +28,12 @@ export function trackViewContent(product: { slug: string; name: string }): void 
   });
 }
 
-export function trackLead(): void {
+export function trackLead(source?: string): void {
   const fbq = getFbq();
   if (!fbq || !PIXEL_ID) return;
-  fbq("track", "Lead");
+  if (source) {
+    fbq("track", "Lead", { source });
+  } else {
+    fbq("track", "Lead");
+  }
 }
